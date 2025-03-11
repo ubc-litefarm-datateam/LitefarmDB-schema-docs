@@ -1,5 +1,5 @@
 ### **📝 LiteFarmDB Schema Docs**
-```md
+
 # LiteFarm Database Schema Documentation  
 
 📌 **Live Documentation:** [LiteFarmDB Schema Docs](https://ubc-litefarm-datateam.github.io/LitefarmDB-schema-docs/)  

@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>task_animal_relationship - pg-litefarm.public</title>
+        <!-- Tell the browser to be responsive to screen width -->
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <link rel="icon" type="image/png" sizes="16x16" href="../favicon.png">
+        <!-- Bootstrap 3.3.5 -->
+        <link rel="stylesheet" href="../bower/admin-lte/bootstrap/css/bootstrap.min.css">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="../bower/font-awesome/css/font-awesome.min.css">
+        <!-- Ionicons -->
+        <link rel="stylesheet" href="../bower/ionicons/css/ionicons.min.css">
+        <!-- DataTables -->
+        <link rel="stylesheet" href="../bower/datatables.net-bs/css/dataTables.bootstrap.min.css">
+        <link rel="stylesheet" href="../bower/datatables.net-buttons-bs/css/buttons.bootstrap.min.css">
+        <!-- Code Mirror -->
+        <link rel="stylesheet" href="../bower/codemirror/codemirror.css">
+        <!-- Fonts -->
+        <link href='../fonts/indieflower/indie-flower.css' rel='stylesheet' type='text/css'>
+        <link href='../fonts/source-sans-pro/source-sans-pro.css' rel='stylesheet' type='text/css'>
+
+        <!-- Theme style -->
+        <link rel="stylesheet" href="../bower/admin-lte/dist/css/AdminLTE.min.css">
+        <!-- Salvattore -->
+        <link rel="stylesheet" href="../bower/salvattore/salvattore.css">
+        <!-- AdminLTE Skins. Choose a skin from the css/skins
+           folder instead of downloading all of them to reduce the load. -->
+        <link rel="stylesheet" href="../bower/admin-lte/dist/css/skins/_all-skins.min.css">
+        <!-- SchemaSpy -->
+        <link rel="stylesheet" href="../schemaSpy.css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="../bower/html5shiv/html5shiv.min.js"></script>
+        <script src="../bower/respond/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
+    <body class="hold-transition skin-blue layout-top-nav">
+        <div class="wrapper">
+            <header class="main-header">
+                <nav class="navbar navbar-static-top">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <a href="../index.html" class="navbar-brand"><b>pg-litefarm</b></a><span class="navbar-brand" style="padding-left: 0">.public</span>
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse"><i class="fa fa-bars"></i></button>
+                        </div>
+
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                            <ul class="nav navbar-nav">
+                                <li><a href="../index.html">Tables <span class="sr-only">(current)</span></a></li>
+                                <li><a href="../columns.html" title="All of the columns in the schema">Columns</a></li>
+                                <li><a href="../constraints.html" title="Useful for diagnosing error messages that just give constraint name or number">Constraints</a></li>
+                                <li><a href="../relationships.html" title="Diagram of table relationships">Relationships</a></li>
+                                <li><a href="../orphans.html" title="View of tables with neither parents nor children">Orphan&nbsp;Tables</a></li>
+                                <li><a href="../anomalies.html" title="Things that might not be quite right">Anomalies</a></li>
+                                <li><a href="../routines.html" title="Procedures and functions">Routines</a></li>
+                            </ul>
+                        </div>
+                        <!-- /.navbar-collapse -->
+                        <!-- Navbar Right Menu -->
+                    </div>
+                    <!-- /.container-fluid -->
+                </nav>
+            </header>
+            <!-- Main content -->
+            <!-- Full Width Column -->
+            <div class="content-wrapper">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <h1>task_animal_relationship</h1><p><span id="recordNumber">255</span> rows</p><br />
+                </section>
+                <!-- Main content -->
+                <section class="content">
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+                            <h3 id="Columns" class="box-title">Columns</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <table
+                                    id="standard_table"
+                                    class="table table-bordered table-striped dataTable"
+                                    role="grid"
+                                    data-paging="true"
+                                    data-page-length="10"
+                                    data-length-change="false">
+                                <thead align='left'>
+                                <tr>
+                                    <th>Column</th>
+                                    <th>Type</th>
+                                    <th>Size</th>
+                                    <th title='Are nulls allowed?'>Nulls</th>
+                                    <th title='Is column automatically updated?'>Auto</th>
+                                    <th title='Default value'>Default</th>
+                                    <th title='Columns in tables that reference this column'>Children</th>
+                                    <th title='Columns in tables that are referenced by this column'>Parents</th>
+                                    <th title='Comments' class="toggle"><span>Comments</span></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="task_id">task_id</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="task_animal_relationship.task_id references task.task_id via task_animal_relationship_task_id_foreign"><a href='task.html'>task</a><span class='relatedKey'>.task_id</span></td>
+                                                <td class="constraint detail">task_animal_relationship_task_id_foreign</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="animal_id">animal_id</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="task_animal_relationship.animal_id references animal.id via task_animal_relationship_animal_id_foreign"><a href='animal.html'>animal</a><span class='relatedKey'>.id</span></td>
+                                                <td class="constraint detail">task_animal_relationship_animal_id_foreign</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <i class="fa fa-code-fork"></i>
+                            <h3 id="Relationships" class="box-title">Relationships</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <div class="nav-tabs-custom"><!-- Tabs within a box -->
+                                <h5>Close relationships within degrees of separation</h5>
+                                <ul class="nav nav-tabs pull-left ui-sortable-handle">
+                                    <li class="active"><a href="#oneDegreeImg-chart" data-toggle="tab" aria-expanded="true">One</a></li>
+                                    <li class=""><a href="#twodegreesDegreeImg-chart" data-toggle="tab" aria-expanded="true">Two degrees</a></li>
+                                </ul>
+                                <div class="tab-content no-padding">
+                                    <div class="chart tab-pane active" id="oneDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="oneDegreeRelationshipsDiagram" name="oneDegreeRelationshipsDiagram">
+<area shape="rect" id="node1" href="task_animal_relationship.html" target="_top" title="task_animal_relationship" alt="" coords="313,129,660,257">
+<area shape="rect" id="node2" href="animal.html" target="_top" title="animal" alt="" coords="10,287,265,785">
+<area shape="rect" id="node3" href="task.html" target="_top" title="task" alt="" coords="5,5,269,269">
+</map>
+                                        <a name='diagram'><img id="oneDegreeImg" src="../diagrams/tables/task_animal_relationship.1degree.png" usemap="#oneDegreeRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="twodegreesDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="twoDegreesRelationshipsDiagram" name="twoDegreesRelationshipsDiagram">
+<area shape="rect" id="node1" href="animal.html" target="_top" title="animal" alt="" coords="1313,2253,1568,2752">
+<area shape="rect" id="node2" href="animal_removal_reason.html" target="_top" title="animal_removal_reason" alt="" coords="924,2648,1179,2736">
+<area shape="rect" id="node3" href="users.html" target="_top" title="users" alt="" coords="5,1829,172,1917">
+<area shape="rect" id="node4" href="custom_animal_breed.html" target="_top" title="custom_animal_breed" alt="" coords="930,2155,1172,2243">
+<area shape="rect" id="node5" href="custom_animal_type.html" target="_top" title="custom_animal_type" alt="" coords="644,2119,875,2207">
+<area shape="rect" id="node6" href="default_animal_breed.html" target="_top" title="default_animal_breed" alt="" coords="932,2013,1170,2101">
+<area shape="rect" id="node7" href="default_animal_type.html" target="_top" title="default_animal_type" alt="" coords="646,1977,873,2065">
+<area shape="rect" id="node8" href="farm.html" target="_top" title="farm" alt="" coords="434,1943,600,2031">
+<area shape="rect" id="node9" href="animal_identifier_color.html" target="_top" title="animal_identifier_color" alt="" coords="927,2365,1176,2453">
+<area shape="rect" id="node10" href="animal_identifier_type.html" target="_top" title="animal_identifier_type" alt="" coords="930,2753,1172,2841">
+<area shape="rect" id="node11" href="location.html" target="_top" title="location" alt="" coords="216,1869,390,1957">
+<area shape="rect" id="node12" href="animal_origin.html" target="_top" title="animal_origin" alt="" coords="962,2471,1140,2559">
+<area shape="rect" id="node13" href="animal_sex.html" target="_top" title="animal_sex" alt="" coords="972,2260,1131,2348">
+<area shape="rect" id="node14" href="animal_group_relationship.html" target="_top" title="animal_group_relationship" alt="" coords="1731,2309,2009,2397">
+<area shape="rect" id="node15" href="animal_movement_task.html" target="_top" title="animal_movement_task" alt="" coords="1313,1621,1567,1709">
+<area shape="rect" id="node16" href="task.html" target="_top" title="task" alt="" coords="919,1303,1183,1567">
+<area shape="rect" id="node34" href="task_type.html" target="_top" title="task_type" alt="" coords="681,1676,839,1764">
+<area shape="rect" id="node17" href="animal_movement_task_purpose_re_17e6e3c6.html" target="_top" title="animal_movement_task_purpose_relationship" alt="" coords="1227,1727,1653,1815">
+<area shape="rect" id="node18" href="animal_use_relationship.html" target="_top" title="animal_use_relationship" alt="" coords="1740,2204,2000,2292">
+<area shape="rect" id="node19" href="cleaning_task.html" target="_top" title="cleaning_task" alt="" coords="1351,1832,1530,1920">
+<area shape="rect" id="node20" href="field_work_task.html" target="_top" title="field_work_task" alt="" coords="1343,5,1537,93">
+<area shape="rect" id="node21" href="harvest_task.html" target="_top" title="harvest_task" alt="" coords="1355,111,1526,199">
+<area shape="rect" id="node22" href="irrigation_task.html" target="_top" title="irrigation_task" alt="" coords="1349,2043,1532,2131">
+<area shape="rect" id="node23" href="location_tasks.html" target="_top" title="location_tasks" alt="" coords="1348,2148,1532,2236">
+<area shape="rect" id="node24" href="maintenance_task.html" target="_top" title="maintenance_task" alt="" coords="1334,216,1546,304">
+<area shape="rect" id="node25" href="management_tasks.html" target="_top" title="management_tasks" alt="" coords="1329,321,1551,409">
+<area shape="rect" id="node26" href="pest_control_task.html" target="_top" title="pest_control_task" alt="" coords="1335,427,1545,515">
+<area shape="rect" id="node27" href="plant_task.html" target="_top" title="plant_task" alt="" coords="1364,532,1516,620">
+<area shape="rect" id="node28" href="sale_task.html" target="_top" title="sale_task" alt="" coords="1367,637,1513,725">
+<area shape="rect" id="node29" href="scouting_task.html" target="_top" title="scouting_task" alt="" coords="1350,743,1530,831">
+<area shape="rect" id="node30" href="social_task.html" target="_top" title="social_task" alt="" coords="1361,848,1520,936">
+<area shape="rect" id="node31" href="soil_amendment_task.html" target="_top" title="soil_amendment_task" alt="" coords="1320,953,1560,1041">
+<area shape="rect" id="node32" href="soil_amendment_task_products.html" target="_top" title="soil_amendment_task_products" alt="" coords="1281,1937,1599,2025">
+<area shape="rect" id="node33" href="soil_task.html" target="_top" title="soil_task" alt="" coords="1369,1059,1511,1147">
+<area shape="rect" id="node35" href="task_animal_batch_relationship.html" target="_top" title="task_animal_batch_relationship" alt="" coords="1282,1164,1598,1252">
+<area shape="rect" id="node36" href="task_animal_relationship.html" target="_top" title="task_animal_relationship" alt="" coords="1697,1643,2043,1771">
+<area shape="rect" id="node37" href="transplant_task.html" target="_top" title="transplant_task" alt="" coords="1345,1305,1536,1393">
+<area shape="rect" id="node38" href="transport_task.html" target="_top" title="transport_task" alt="" coords="1348,1411,1532,1499">
+<area shape="rect" id="node39" href="wash_and_pack_task.html" target="_top" title="wash_and_pack_task" alt="" coords="1322,1516,1558,1604">
+</map>
+                                        <a name='diagram'><img id="twodegreesDegreeImg" src="../diagrams/tables/task_animal_relationship.2degrees.png" usemap="#twoDegreesRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- /.box-body -->
+                    </div>
+                </section>
+                <script>
+                    var config = {
+                        pagination: true
+                    }
+                </script>
+            </div>
+            <!-- /.content-wrapper -->
+            <footer class="main-footer">
+                <div>
+                    <div class="pull-right hidden-xs">
+                        <a href="https://github.com/schemaspy/schemaspy" title="GitHub for SchemaSpy"><i class="fa fa-github-square fa-2x"></i></a>
+                        <a href="http://stackoverflow.com/questions/tagged/schemaspy" title="StackOverflow for SchemaSpy"><i class="fa fa-stack-overflow fa-2x"></i></a>
+                    </div>
+                    <strong>Generated by <a href="http://schemaspy.org/" class="logo-text"><i class="fa fa-database"></i> SchemaSpy 6.2.4</a></strong>
+                </div>
+                <!-- /.container -->
+            </footer>
+        </div>
+        <!-- ./wrapper -->
+
+        <!-- jQuery 2.2.3 -->
+        <script src="../bower/admin-lte/plugins/jQuery/jquery-2.2.3.min.js"></script>
+        <script src="../bower/admin-lte/plugins/jQueryUI/jquery-ui.min.js"></script>
+        <!-- Bootstrap 3.3.5 -->
+        <script src="../bower/admin-lte/bootstrap/js/bootstrap.min.js"></script>
+        <!-- DataTables -->
+        <script src="../bower/datatables.net/jquery.dataTables.min.js"></script>
+        <script src="../bower/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+        <script src="../bower/datatables.net-buttons/dataTables.buttons.min.js"></script>
+        <script src="../bower/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.html5.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.print.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.colVis.min.js"></script>
+        <!-- SheetJS -->
+        <script src="../bower/js-xlsx/xlsx.full.min.js"></script>
+        <!-- pdfmake -->
+        <script src="../bower/pdfmake/pdfmake.min.js"></script>
+        <script src="../bower/pdfmake/vfs_fonts.js"></script>
+        <!-- SlimScroll -->
+        <script src="../bower/admin-lte/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+        <!-- FastClick -->
+        <script src="../bower/admin-lte/plugins/fastclick/fastclick.js"></script>
+        <!-- Salvattore -->
+        <script src="../bower/salvattore/salvattore.min.js"></script>
+        <!-- AnchorJS -->
+        <script src="../bower/anchor-js/anchor.min.js"></script>
+        <!-- CodeMirror -->
+        <script src="../bower/codemirror/codemirror.js"></script>
+        <script src="../bower/codemirror/sql.js"></script>
+        <!-- AdminLTE App -->
+        <script src="../bower/admin-lte/dist/js/app.min.js"></script>
+        <script src="table.js"></script>
+        <script src="../schemaSpy.js"></script>
+    </body>
+</html>

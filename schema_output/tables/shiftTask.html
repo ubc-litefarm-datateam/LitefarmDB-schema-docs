@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>shiftTask - pg-litefarm.public</title>
+        <!-- Tell the browser to be responsive to screen width -->
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <link rel="icon" type="image/png" sizes="16x16" href="../favicon.png">
+        <!-- Bootstrap 3.3.5 -->
+        <link rel="stylesheet" href="../bower/admin-lte/bootstrap/css/bootstrap.min.css">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="../bower/font-awesome/css/font-awesome.min.css">
+        <!-- Ionicons -->
+        <link rel="stylesheet" href="../bower/ionicons/css/ionicons.min.css">
+        <!-- DataTables -->
+        <link rel="stylesheet" href="../bower/datatables.net-bs/css/dataTables.bootstrap.min.css">
+        <link rel="stylesheet" href="../bower/datatables.net-buttons-bs/css/buttons.bootstrap.min.css">
+        <!-- Code Mirror -->
+        <link rel="stylesheet" href="../bower/codemirror/codemirror.css">
+        <!-- Fonts -->
+        <link href='../fonts/indieflower/indie-flower.css' rel='stylesheet' type='text/css'>
+        <link href='../fonts/source-sans-pro/source-sans-pro.css' rel='stylesheet' type='text/css'>
+
+        <!-- Theme style -->
+        <link rel="stylesheet" href="../bower/admin-lte/dist/css/AdminLTE.min.css">
+        <!-- Salvattore -->
+        <link rel="stylesheet" href="../bower/salvattore/salvattore.css">
+        <!-- AdminLTE Skins. Choose a skin from the css/skins
+           folder instead of downloading all of them to reduce the load. -->
+        <link rel="stylesheet" href="../bower/admin-lte/dist/css/skins/_all-skins.min.css">
+        <!-- SchemaSpy -->
+        <link rel="stylesheet" href="../schemaSpy.css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="../bower/html5shiv/html5shiv.min.js"></script>
+        <script src="../bower/respond/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
+    <body class="hold-transition skin-blue layout-top-nav">
+        <div class="wrapper">
+            <header class="main-header">
+                <nav class="navbar navbar-static-top">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <a href="../index.html" class="navbar-brand"><b>pg-litefarm</b></a><span class="navbar-brand" style="padding-left: 0">.public</span>
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse"><i class="fa fa-bars"></i></button>
+                        </div>
+
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                            <ul class="nav navbar-nav">
+                                <li><a href="../index.html">Tables <span class="sr-only">(current)</span></a></li>
+                                <li><a href="../columns.html" title="All of the columns in the schema">Columns</a></li>
+                                <li><a href="../constraints.html" title="Useful for diagnosing error messages that just give constraint name or number">Constraints</a></li>
+                                <li><a href="../relationships.html" title="Diagram of table relationships">Relationships</a></li>
+                                <li><a href="../orphans.html" title="View of tables with neither parents nor children">Orphan&nbsp;Tables</a></li>
+                                <li><a href="../anomalies.html" title="Things that might not be quite right">Anomalies</a></li>
+                                <li><a href="../routines.html" title="Procedures and functions">Routines</a></li>
+                            </ul>
+                        </div>
+                        <!-- /.navbar-collapse -->
+                        <!-- Navbar Right Menu -->
+                    </div>
+                    <!-- /.container-fluid -->
+                </nav>
+            </header>
+            <!-- Main content -->
+            <!-- Full Width Column -->
+            <div class="content-wrapper">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <h1>shiftTask</h1><p><span id="recordNumber">2585</span> rows</p><br />
+                </section>
+                <!-- Main content -->
+                <section class="content">
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+                            <h3 id="Columns" class="box-title">Columns</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <table
+                                    id="standard_table"
+                                    class="table table-bordered table-striped dataTable"
+                                    role="grid"
+                                    data-paging="true"
+                                    data-page-length="10"
+                                    data-length-change="false">
+                                <thead align='left'>
+                                <tr>
+                                    <th>Column</th>
+                                    <th>Type</th>
+                                    <th>Size</th>
+                                    <th title='Are nulls allowed?'>Nulls</th>
+                                    <th title='Is column automatically updated?'>Auto</th>
+                                    <th title='Default value'>Default</th>
+                                    <th title='Columns in tables that reference this column'>Children</th>
+                                    <th title='Columns in tables that are referenced by this column'>Parents</th>
+                                    <th title='Comments' class="toggle"><span>Comments</span></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="task_id">task_id</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="shiftTask.task_id references task_type.task_type_id via shifttask_task_id_foreign"><a href='task_type.html'>task_type</a><span class='relatedKey'>.task_type_id</span></td>
+                                                <td class="constraint detail">shifttask_task_id_foreign</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="shift_id">shift_id</span></td>
+                                    <td>uuid</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="shiftTask.shift_id references shift.shift_id via shifttask_shift_id_foreign"><a href='shift.html'>shift</a><span class='relatedKey'>.shift_id</span></td>
+                                                <td class="constraint detail">shifttask_shift_id_foreign</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="management_plan_id">management_plan_id</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="shiftTask.management_plan_id references management_plan.management_plan_id via shifttask_field_crop_id_foreign"><a href='management_plan.html'>management_plan</a><span class='relatedKey'>.management_plan_id</span></td>
+                                                <td class="constraint detail">shifttask_field_crop_id_foreign</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="is_location">is_location</span></td>
+                                    <td>bool</td>
+                                    <td>1</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>false</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="location_id">location_id</span></td>
+                                    <td>uuid</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="shiftTask.location_id references location.location_id via shifttask_field_id_foreign"><a href='location.html'>location</a><span class='relatedKey'>.location_id</span></td>
+                                                <td class="constraint detail">shifttask_field_id_foreign</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="duration">duration</span></td>
+                                    <td>float4</td>
+                                    <td>8,8</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="deleted">deleted</span></td>
+                                    <td>bool</td>
+                                    <td>1</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>false</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="created_by_user_id">created_by_user_id</span></td>
+                                    <td>varchar</td>
+                                    <td>255</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>&#39;1&#39;::character varying</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="shiftTask.created_by_user_id references users.user_id via shifttask_created_by_user_id_foreign"><a href='users.html'>users</a><span class='relatedKey'>.user_id</span></td>
+                                                <td class="constraint detail">shifttask_created_by_user_id_foreign</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="updated_by_user_id">updated_by_user_id</span></td>
+                                    <td>varchar</td>
+                                    <td>255</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>&#39;1&#39;::character varying</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="shiftTask.updated_by_user_id references users.user_id via shifttask_updated_by_user_id_foreign"><a href='users.html'>users</a><span class='relatedKey'>.user_id</span></td>
+                                                <td class="constraint detail">shifttask_updated_by_user_id_foreign</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="created_at">created_at</span></td>
+                                    <td>timestamptz</td>
+                                    <td>35,6</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>&#39;1999-12-31 16:00:00-08&#39;::timestamp with time zone</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="updated_at">updated_at</span></td>
+                                    <td>timestamptz</td>
+                                    <td>35,6</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>&#39;1999-12-31 16:00:00-08&#39;::timestamp with time zone</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <i class="fa fa-code-fork"></i>
+                            <h3 id="Relationships" class="box-title">Relationships</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <div class="nav-tabs-custom"><!-- Tabs within a box -->
+                                <h5>Close relationships within degrees of separation</h5>
+                                <ul class="nav nav-tabs pull-left ui-sortable-handle">
+                                    <li class="active"><a href="#oneDegreeImg-chart" data-toggle="tab" aria-expanded="true">One</a></li>
+                                    <li class=""><a href="#twodegreesDegreeImg-chart" data-toggle="tab" aria-expanded="true">Two degrees</a></li>
+                                </ul>
+                                <div class="tab-content no-padding">
+                                    <div class="chart tab-pane active" id="oneDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="oneDegreeRelationshipsDiagram" name="oneDegreeRelationshipsDiagram">
+<area shape="rect" id="node1" href="location.html" target="_top" title="location" alt="" coords="290,732,494,937">
+<area shape="rect" id="node2" href="users.html" target="_top" title="users" alt="" coords="5,524,215,700">
+<area shape="rect" id="node3" href="management_plan.html" target="_top" title="management_plan" alt="" coords="259,480,525,715">
+<area shape="rect" id="node4" href="shift.html" target="_top" title="shift" alt="" coords="290,228,494,463">
+<area shape="rect" id="node5" href="shiftTask.html" target="_top" title="shiftTask" alt="" coords="569,516,910,908">
+<area shape="rect" id="node6" href="task_type.html" target="_top" title="task_type" alt="" coords="289,5,495,211">
+</map>
+                                        <a name='diagram'><img id="oneDegreeImg" src="../diagrams/tables/shiftTask.1degree.png" usemap="#oneDegreeRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="twodegreesDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="twoDegreesRelationshipsDiagram" name="twoDegreesRelationshipsDiagram">
+<area shape="rect" id="node1" href="animal.html" target="_top" title="animal" alt="" coords="1663,1704,1817,1792">
+<area shape="rect" id="node2" href="users.html" target="_top" title="users" alt="" coords="212,3393,379,3481">
+<area shape="rect" id="node3" href="custom_animal_breed.html" target="_top" title="custom_animal_breed" alt="" coords="1294,2437,1535,2525">
+<area shape="rect" id="node4" href="custom_animal_type.html" target="_top" title="custom_animal_type" alt="" coords="1017,2154,1248,2242">
+<area shape="rect" id="node5" href="farm.html" target="_top" title="farm" alt="" coords="771,2725,937,2813">
+<area shape="rect" id="node6" href="location.html" target="_top" title="location" alt="" coords="470,1777,644,1865">
+<area shape="rect" id="node69" href="user_status.html" target="_top" title="user_status" alt="" coords="5,3390,168,3478">
+<area shape="rect" id="node7" href="animal_batch.html" target="_top" title="animal_batch" alt="" coords="1653,2437,1828,2525">
+<area shape="rect" id="node8" href="animal_batch_sex_detail.html" target="_top" title="animal_batch_sex_detail" alt="" coords="1982,4825,2244,4913">
+<area shape="rect" id="node9" href="animal_group.html" target="_top" title="animal_group" alt="" coords="468,457,646,545">
+<area shape="rect" id="node10" href="barn.html" target="_top" title="barn" alt="" coords="781,1812,926,1900">
+<area shape="rect" id="node11" href="buffer_zone.html" target="_top" title="buffer_zone" alt="" coords="772,1917,936,2005">
+<area shape="rect" id="node12" href="ceremonial_area.html" target="_top" title="ceremonial_area" alt="" coords="754,2022,953,2110">
+<area shape="rect" id="node13" href="crop.html" target="_top" title="crop" alt="" coords="1053,196,1211,284">
+<area shape="rect" id="node14" href="crop_management_plan.html" target="_top" title="crop_management_plan" alt="" coords="1984,108,2242,196">
+<area shape="rect" id="node15" href="management_plan.html" target="_top" title="management_plan" alt="" coords="1633,110,1847,198">
+<area shape="rect" id="node16" href="crop_variety.html" target="_top" title="crop_variety" alt="" coords="1330,144,1499,232">
+<area shape="rect" id="node40" href="management_plan_group.html" target="_top" title="management_plan_group" alt="" coords="423,92,691,180">
+<area shape="rect" id="node17" href="custom_location.html" target="_top" title="custom_location" alt="" coords="754,2128,954,2216">
+<area shape="rect" id="node18" href="disease.html" target="_top" title="disease" alt="" coords="1059,2260,1205,2348">
+<area shape="rect" id="node19" href="document.html" target="_top" title="document" alt="" coords="1057,2509,1207,2597">
+<area shape="rect" id="node20" href="emailToken.html" target="_top" title="emailToken" alt="" coords="1051,2877,1213,2965">
+<area shape="rect" id="node21" href="farm_site_boundary.html" target="_top" title="farm_site_boundary" alt="" coords="741,2233,967,2321">
+<area shape="rect" id="node22" href="farmDataSchedule.html" target="_top" title="farmDataSchedule" alt="" coords="1025,2982,1239,3070">
+<area shape="rect" id="node23" href="farmExpense.html" target="_top" title="farmExpense" alt="" coords="1328,378,1501,466">
+<area shape="rect" id="node24" href="farmExpenseType.html" target="_top" title="farmExpenseType" alt="" coords="1027,405,1238,493">
+<area shape="rect" id="node25" href="fence.html" target="_top" title="fence" alt="" coords="787,2338,920,2426">
+<area shape="rect" id="node26" href="fertilizer.html" target="_top" title="fertilizer" alt="" coords="1065,3124,1200,3212">
+<area shape="rect" id="node27" href="field.html" target="_top" title="field" alt="" coords="775,2444,933,2532">
+<area shape="rect" id="node28" href="field_work_task.html" target="_top" title="field_work_task" alt="" coords="1643,4188,1837,4276">
+<area shape="rect" id="node29" href="field_work_type.html" target="_top" title="field_work_type" alt="" coords="1035,3896,1229,3984">
+<area shape="rect" id="node30" href="task.html" target="_top" title="task" alt="" coords="1327,3988,1502,4076">
+<area shape="rect" id="node63" href="task_type.html" target="_top" title="task_type" alt="" coords="1053,2772,1211,2860">
+<area shape="rect" id="node31" href="figure.html" target="_top" title="figure" alt="" coords="771,509,937,597">
+<area shape="rect" id="node32" href="finance_report.html" target="_top" title="finance_report" alt="" coords="1040,3229,1224,3317">
+<area shape="rect" id="node33" href="garden.html" target="_top" title="garden" alt="" coords="781,614,926,702">
+<area shape="rect" id="node34" href="gate.html" target="_top" title="gate" alt="" coords="787,720,920,808">
+<area shape="rect" id="node35" href="greenhouse.html" target="_top" title="greenhouse" alt="" coords="772,825,936,913">
+<area shape="rect" id="node36" href="irrigation_task.html" target="_top" title="irrigation_task" alt="" coords="1649,3050,1832,3138">
+<area shape="rect" id="node37" href="irrigation_type.html" target="_top" title="irrigation_type" alt="" coords="465,3184,649,3272">
+<area shape="rect" id="node38" href="location_defaults.html" target="_top" title="location_defaults" alt="" coords="752,3022,956,3110">
+<area shape="rect" id="node39" href="location_tasks.html" target="_top" title="location_tasks" alt="" coords="1648,2142,1832,2230">
+<area shape="rect" id="node41" href="natural_area.html" target="_top" title="natural_area" alt="" coords="770,930,938,1018">
+<area shape="rect" id="node42" href="nomination.html" target="_top" title="nomination" alt="" coords="1053,4226,1212,4314">
+<area shape="rect" id="node43" href="nomination_type.html" target="_top" title="nomination_type" alt="" coords="456,4070,658,4158">
+<area shape="rect" id="node44" href="nomination_status.html" target="_top" title="nomination_status" alt="" coords="1307,4257,1522,4345">
+<area shape="rect" id="node45" href="nomination_workflow.html" target="_top" title="nomination_workflow" alt="" coords="735,3980,973,4068">
+<area shape="rect" id="node46" href="notification.html" target="_top" title="notification" alt="" coords="1049,4121,1215,4209">
+<area shape="rect" id="node47" href="notification_user.html" target="_top" title="notification_user" alt="" coords="1314,4452,1515,4540">
+<area shape="rect" id="node48" href="organic_history.html" target="_top" title="organic_history" alt="" coords="757,3288,951,3376">
+<area shape="rect" id="node49" href="organicCertifierSurvey.html" target="_top" title="organicCertifierSurvey" alt="" coords="1292,2666,1537,2754">
+<area shape="rect" id="node50" href="userFarm.html" target="_top" title="userFarm" alt="" coords="1049,2666,1215,2754">
+<area shape="rect" id="node51" href="password.html" target="_top" title="password" alt="" coords="483,3965,631,4053">
+<area shape="rect" id="node52" href="pesticide.html" target="_top" title="pesticide" alt="" coords="1061,3334,1204,3422">
+<area shape="rect" id="node53" href="pin.html" target="_top" title="pin" alt="" coords="795,1036,912,1124">
+<area shape="rect" id="node54" href="planting_management_plan.html" target="_top" title="planting_management_plan" alt="" coords="1971,921,2255,1009">
+<area shape="rect" id="node55" href="product.html" target="_top" title="product" alt="" coords="1053,4332,1211,4420">
+<area shape="rect" id="node56" href="release_badge.html" target="_top" title="release_badge" alt="" coords="465,4228,649,4316">
+<area shape="rect" id="node57" href="residence.html" target="_top" title="residence" alt="" coords="780,1141,928,1229">
+<area shape="rect" id="node58" href="revenue_type.html" target="_top" title="revenue_type" alt="" coords="1044,3738,1220,3826">
+<area shape="rect" id="node59" href="sale.html" target="_top" title="sale" alt="" coords="1335,3776,1494,3864">
+<area shape="rect" id="node60" href="sensor.html" target="_top" title="sensor" alt="" coords="785,1246,923,1334">
+<area shape="rect" id="node61" href="shift.html" target="_top" title="shift" alt="" coords="1341,1813,1488,1901">
+<area shape="rect" id="node62" href="shiftTask.html" target="_top" title="shiftTask" alt="" coords="1943,2270,2283,2662">
+<area shape="rect" id="node64" href="showedSpotlight.html" target="_top" title="showedSpotlight" alt="" coords="456,4661,658,4749">
+<area shape="rect" id="node65" href="soil_amendment_task_products.html" target="_top" title="soil_amendment_task_products" alt="" coords="1581,4493,1899,4581">
+<area shape="rect" id="node66" href="supportTicket.html" target="_top" title="supportTicket" alt="" coords="1043,3440,1222,3528">
+<area shape="rect" id="node67" href="surface_water.html" target="_top" title="surface_water" alt="" coords="764,1352,944,1440">
+<area shape="rect" id="node68" href="userLog.html" target="_top" title="userLog" alt="" coords="1052,3545,1213,3633">
+<area shape="rect" id="node70" href="water_valve.html" target="_top" title="water_valve" alt="" coords="772,1457,936,1545">
+<area shape="rect" id="node71" href="watercourse.html" target="_top" title="watercourse" alt="" coords="770,1562,937,1650">
+</map>
+                                        <a name='diagram'><img id="twodegreesDegreeImg" src="../diagrams/tables/shiftTask.2degrees.png" usemap="#twoDegreesRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- /.box-body -->
+                    </div>
+                </section>
+                <script>
+                    var config = {
+                        pagination: true
+                    }
+                </script>
+            </div>
+            <!-- /.content-wrapper -->
+            <footer class="main-footer">
+                <div>
+                    <div class="pull-right hidden-xs">
+                        <a href="https://github.com/schemaspy/schemaspy" title="GitHub for SchemaSpy"><i class="fa fa-github-square fa-2x"></i></a>
+                        <a href="http://stackoverflow.com/questions/tagged/schemaspy" title="StackOverflow for SchemaSpy"><i class="fa fa-stack-overflow fa-2x"></i></a>
+                    </div>
+                    <strong>Generated by <a href="http://schemaspy.org/" class="logo-text"><i class="fa fa-database"></i> SchemaSpy 6.2.4</a></strong>
+                </div>
+                <!-- /.container -->
+            </footer>
+        </div>
+        <!-- ./wrapper -->
+
+        <!-- jQuery 2.2.3 -->
+        <script src="../bower/admin-lte/plugins/jQuery/jquery-2.2.3.min.js"></script>
+        <script src="../bower/admin-lte/plugins/jQueryUI/jquery-ui.min.js"></script>
+        <!-- Bootstrap 3.3.5 -->
+        <script src="../bower/admin-lte/bootstrap/js/bootstrap.min.js"></script>
+        <!-- DataTables -->
+        <script src="../bower/datatables.net/jquery.dataTables.min.js"></script>
+        <script src="../bower/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+        <script src="../bower/datatables.net-buttons/dataTables.buttons.min.js"></script>
+        <script src="../bower/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.html5.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.print.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.colVis.min.js"></script>
+        <!-- SheetJS -->
+        <script src="../bower/js-xlsx/xlsx.full.min.js"></script>
+        <!-- pdfmake -->
+        <script src="../bower/pdfmake/pdfmake.min.js"></script>
+        <script src="../bower/pdfmake/vfs_fonts.js"></script>
+        <!-- SlimScroll -->
+        <script src="../bower/admin-lte/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+        <!-- FastClick -->
+        <script src="../bower/admin-lte/plugins/fastclick/fastclick.js"></script>
+        <!-- Salvattore -->
+        <script src="../bower/salvattore/salvattore.min.js"></script>
+        <!-- AnchorJS -->
+        <script src="../bower/anchor-js/anchor.min.js"></script>
+        <!-- CodeMirror -->
+        <script src="../bower/codemirror/codemirror.js"></script>
+        <script src="../bower/codemirror/sql.js"></script>
+        <!-- AdminLTE App -->
+        <script src="../bower/admin-lte/dist/js/app.min.js"></script>
+        <script src="table.js"></script>
+        <script src="../schemaSpy.js"></script>
+    </body>
+</html>

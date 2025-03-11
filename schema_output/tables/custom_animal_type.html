@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>custom_animal_type - pg-litefarm.public</title>
+        <!-- Tell the browser to be responsive to screen width -->
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <link rel="icon" type="image/png" sizes="16x16" href="../favicon.png">
+        <!-- Bootstrap 3.3.5 -->
+        <link rel="stylesheet" href="../bower/admin-lte/bootstrap/css/bootstrap.min.css">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="../bower/font-awesome/css/font-awesome.min.css">
+        <!-- Ionicons -->
+        <link rel="stylesheet" href="../bower/ionicons/css/ionicons.min.css">
+        <!-- DataTables -->
+        <link rel="stylesheet" href="../bower/datatables.net-bs/css/dataTables.bootstrap.min.css">
+        <link rel="stylesheet" href="../bower/datatables.net-buttons-bs/css/buttons.bootstrap.min.css">
+        <!-- Code Mirror -->
+        <link rel="stylesheet" href="../bower/codemirror/codemirror.css">
+        <!-- Fonts -->
+        <link href='../fonts/indieflower/indie-flower.css' rel='stylesheet' type='text/css'>
+        <link href='../fonts/source-sans-pro/source-sans-pro.css' rel='stylesheet' type='text/css'>
+
+        <!-- Theme style -->
+        <link rel="stylesheet" href="../bower/admin-lte/dist/css/AdminLTE.min.css">
+        <!-- Salvattore -->
+        <link rel="stylesheet" href="../bower/salvattore/salvattore.css">
+        <!-- AdminLTE Skins. Choose a skin from the css/skins
+           folder instead of downloading all of them to reduce the load. -->
+        <link rel="stylesheet" href="../bower/admin-lte/dist/css/skins/_all-skins.min.css">
+        <!-- SchemaSpy -->
+        <link rel="stylesheet" href="../schemaSpy.css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="../bower/html5shiv/html5shiv.min.js"></script>
+        <script src="../bower/respond/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
+    <body class="hold-transition skin-blue layout-top-nav">
+        <div class="wrapper">
+            <header class="main-header">
+                <nav class="navbar navbar-static-top">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <a href="../index.html" class="navbar-brand"><b>pg-litefarm</b></a><span class="navbar-brand" style="padding-left: 0">.public</span>
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse"><i class="fa fa-bars"></i></button>
+                        </div>
+
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                            <ul class="nav navbar-nav">
+                                <li><a href="../index.html">Tables <span class="sr-only">(current)</span></a></li>
+                                <li><a href="../columns.html" title="All of the columns in the schema">Columns</a></li>
+                                <li><a href="../constraints.html" title="Useful for diagnosing error messages that just give constraint name or number">Constraints</a></li>
+                                <li><a href="../relationships.html" title="Diagram of table relationships">Relationships</a></li>
+                                <li><a href="../orphans.html" title="View of tables with neither parents nor children">Orphan&nbsp;Tables</a></li>
+                                <li><a href="../anomalies.html" title="Things that might not be quite right">Anomalies</a></li>
+                                <li><a href="../routines.html" title="Procedures and functions">Routines</a></li>
+                            </ul>
+                        </div>
+                        <!-- /.navbar-collapse -->
+                        <!-- Navbar Right Menu -->
+                    </div>
+                    <!-- /.container-fluid -->
+                </nav>
+            </header>
+            <!-- Main content -->
+            <!-- Full Width Column -->
+            <div class="content-wrapper">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <h1>custom_animal_type</h1><p><span id="recordNumber">51</span> rows</p><br />
+                </section>
+                <!-- Main content -->
+                <section class="content">
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+                            <h3 id="Columns" class="box-title">Columns</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <table
+                                    id="standard_table"
+                                    class="table table-bordered table-striped dataTable"
+                                    role="grid"
+                                    data-paging="true"
+                                    data-page-length="10"
+                                    data-length-change="false">
+                                <thead align='left'>
+                                <tr>
+                                    <th>Column</th>
+                                    <th>Type</th>
+                                    <th>Size</th>
+                                    <th title='Are nulls allowed?'>Nulls</th>
+                                    <th title='Is column automatically updated?'>Auto</th>
+                                    <th title='Default value'>Default</th>
+                                    <th title='Columns in tables that reference this column'>Children</th>
+                                    <th title='Columns in tables that are referenced by this column'>Parents</th>
+                                    <th title='Comments' class="toggle"><span>Comments</span></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="id">id</span></td>
+                                    <td>serial</td>
+                                    <td>10</td>
+                                    <td title=''></td>
+                                    <td title='Automatically updated by the database'>√</td>
+                                    <td>nextval(&#39;custom_animal_type_id_seq&#39;::regclass)</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="animal.custom_type_id references custom_animal_type.id via animal_custom_type_id_foreign"><a href='animal.html'>animal</a><span class='relatedKey'>.custom_type_id</span></td>
+                                                <td class="constraint detail">animal_custom_type_id_foreign</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="animal_batch.custom_type_id references custom_animal_type.id via animal_batch_custom_type_id_foreign"><a href='animal_batch.html'>animal_batch</a><span class='relatedKey'>.custom_type_id</span></td>
+                                                <td class="constraint detail">animal_batch_custom_type_id_foreign</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="custom_animal_breed.custom_type_id references custom_animal_type.id via custom_animal_breed_custom_type_id_foreign"><a href='custom_animal_breed.html'>custom_animal_breed</a><span class='relatedKey'>.custom_type_id</span></td>
+                                                <td class="constraint detail">custom_animal_breed_custom_type_id_foreign</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="farm_id">farm_id</span></td>
+                                    <td>uuid</td>
+                                    <td>2147483647</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="custom_animal_type.farm_id references farm.farm_id via custom_animal_type_farm_id_foreign"><a href='farm.html'>farm</a><span class='relatedKey'>.farm_id</span></td>
+                                                <td class="constraint detail">custom_animal_type_farm_id_foreign</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="type">type</span></td>
+                                    <td>varchar</td>
+                                    <td>255</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="deleted">deleted</span></td>
+                                    <td>bool</td>
+                                    <td>1</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>false</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="created_by_user_id">created_by_user_id</span></td>
+                                    <td>varchar</td>
+                                    <td>255</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>&#39;1&#39;::character varying</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="custom_animal_type.created_by_user_id references users.user_id via custom_animal_type_created_by_user_id_foreign"><a href='users.html'>users</a><span class='relatedKey'>.user_id</span></td>
+                                                <td class="constraint detail">custom_animal_type_created_by_user_id_foreign</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="updated_by_user_id">updated_by_user_id</span></td>
+                                    <td>varchar</td>
+                                    <td>255</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>&#39;1&#39;::character varying</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="custom_animal_type.updated_by_user_id references users.user_id via custom_animal_type_updated_by_user_id_foreign"><a href='users.html'>users</a><span class='relatedKey'>.user_id</span></td>
+                                                <td class="constraint detail">custom_animal_type_updated_by_user_id_foreign</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="created_at">created_at</span></td>
+                                    <td>timestamptz</td>
+                                    <td>35,6</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>&#39;1999-12-31 16:00:00-08&#39;::timestamp with time zone</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="updated_at">updated_at</span></td>
+                                    <td>timestamptz</td>
+                                    <td>35,6</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>&#39;1999-12-31 16:00:00-08&#39;::timestamp with time zone</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <i class="fa fa-sitemap"></i>
+                            <h3 id="Indexes" class="box-title">Indexes</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <table
+                                    id="indexes_table"
+                                    class="table table-bordered table-striped dataTable"
+                                    role="grid"
+                                    data-paging="true"
+                                    data-page-length="10"
+                                    data-length-change="false">
+                                <thead>
+                                <tr>
+                                    <th>Constraint Name</th>
+                                    <th>Type</th>
+                                    <th>Sort</th>
+                                    <th>Column(s)</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey'></i> custom_animal_type_pkey</td>
+                                    <td>Primary key</td>
+                                    <td><span title='Ascending'>Asc</span></td>
+                                    <td>id</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div><!-- /.box-body -->
+                    </div>
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <i class="fa fa-code-fork"></i>
+                            <h3 id="Relationships" class="box-title">Relationships</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <div class="nav-tabs-custom"><!-- Tabs within a box -->
+                                <h5>Close relationships within degrees of separation</h5>
+                                <ul class="nav nav-tabs pull-left ui-sortable-handle">
+                                    <li class="active"><a href="#oneDegreeImg-chart" data-toggle="tab" aria-expanded="true">One</a></li>
+                                    <li class=""><a href="#twodegreesDegreeImg-chart" data-toggle="tab" aria-expanded="true">Two degrees</a></li>
+                                    <li class=""><a href="#oneimpliedDegreeImg-chart" data-toggle="tab" aria-expanded="true">One implied</a></li>
+                                    <li class=""><a href="#twoimpliedDegreeImg-chart" data-toggle="tab" aria-expanded="true">Two implied</a></li>
+                                </ul>
+                                <div class="tab-content no-padding">
+                                    <div class="chart tab-pane active" id="oneDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="oneDegreeRelationshipsDiagram" name="oneDegreeRelationshipsDiagram">
+<area shape="rect" id="node1" href="animal.html" target="_top" title="animal" alt="" coords="1221,5,1475,504">
+<area shape="rect" id="node2" href="users.html" target="_top" title="users" alt="" coords="5,552,215,728">
+<area shape="rect" id="node3" href="custom_animal_breed.html" target="_top" title="custom_animal_breed" alt="" coords="935,500,1177,764">
+<area shape="rect" id="node4" href="custom_animal_type.html" target="_top" title="custom_animal_type" alt="" coords="556,397,891,701">
+<area shape="rect" id="node5" href="farm.html" target="_top" title="farm" alt="" coords="259,321,512,556">
+<area shape="rect" id="node6" href="animal_batch.html" target="_top" title="animal_batch" alt="" coords="1221,521,1475,932">
+</map>
+                                        <a name='diagram'><img id="oneDegreeImg" src="../diagrams/tables/custom_animal_type.1degree.png" usemap="#oneDegreeRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="twodegreesDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="twoDegreesRelationshipsDiagram" name="twoDegreesRelationshipsDiagram">
+<area shape="rect" id="node1" href="animal.html" target="_top" title="animal" alt="" coords="1776,2567,1931,2655">
+<area shape="rect" id="node2" href="animal_removal_reason.html" target="_top" title="animal_removal_reason" alt="" coords="1396,2267,1651,2355">
+<area shape="rect" id="node3" href="users.html" target="_top" title="users" alt="" coords="212,2640,379,2728">
+<area shape="rect" id="node4" href="custom_animal_breed.html" target="_top" title="custom_animal_breed" alt="" coords="1402,1984,1644,2072">
+<area shape="rect" id="node5" href="custom_animal_type.html" target="_top" title="custom_animal_type" alt="" coords="1017,2159,1352,2463">
+<area shape="rect" id="node6" href="default_animal_breed.html" target="_top" title="default_animal_breed" alt="" coords="1404,2161,1642,2249">
+<area shape="rect" id="node7" href="default_animal_type.html" target="_top" title="default_animal_type" alt="" coords="1071,2053,1298,2141">
+<area shape="rect" id="node8" href="farm.html" target="_top" title="farm" alt="" coords="771,2481,937,2569">
+<area shape="rect" id="node9" href="animal_identifier_color.html" target="_top" title="animal_identifier_color" alt="" coords="1399,3219,1647,3307">
+<area shape="rect" id="node10" href="animal_identifier_type.html" target="_top" title="animal_identifier_type" alt="" coords="1402,3849,1644,3937">
+<area shape="rect" id="node11" href="location.html" target="_top" title="location" alt="" coords="470,1327,644,1415">
+<area shape="rect" id="node12" href="animal_origin.html" target="_top" title="animal_origin" alt="" coords="1434,2372,1612,2460">
+<area shape="rect" id="node13" href="animal_sex.html" target="_top" title="animal_sex" alt="" coords="1444,3955,1603,4043">
+<area shape="rect" id="node66" href="user_status.html" target="_top" title="user_status" alt="" coords="5,2637,168,2725">
+<area shape="rect" id="node26" href="countries.html" target="_top" title="countries" alt="" coords="484,2479,630,2567">
+<area shape="rect" id="node14" href="animal_batch.html" target="_top" title="animal_batch" alt="" coords="1766,2055,1941,2143">
+<area shape="rect" id="node15" href="animal_batch_group_relationship.html" target="_top" title="animal_batch_group_relationship" alt="" coords="2056,3311,2386,3399">
+<area shape="rect" id="node16" href="animal_group.html" target="_top" title="animal_group" alt="" coords="765,3997,943,4085">
+<area shape="rect" id="node17" href="animal_batch_sex_detail.html" target="_top" title="animal_batch_sex_detail" alt="" coords="2090,4144,2352,4232">
+<area shape="rect" id="node18" href="animal_batch_use_relationship.html" target="_top" title="animal_batch_use_relationship" alt="" coords="2066,2052,2377,2140">
+<area shape="rect" id="node19" href="animal_group_relationship.html" target="_top" title="animal_group_relationship" alt="" coords="2082,3887,2360,3975">
+<area shape="rect" id="node20" href="animal_use_relationship.html" target="_top" title="animal_use_relationship" alt="" coords="2091,2564,2351,2652">
+<area shape="rect" id="node21" href="crop.html" target="_top" title="crop" alt="" coords="1105,1400,1263,1488">
+<area shape="rect" id="node22" href="crop_variety.html" target="_top" title="crop_variety" alt="" coords="1439,565,1607,653">
+<area shape="rect" id="node23" href="disease.html" target="_top" title="disease" alt="" coords="1111,2745,1257,2833">
+<area shape="rect" id="node24" href="document.html" target="_top" title="document" alt="" coords="1109,2851,1259,2939">
+<area shape="rect" id="node25" href="emailToken.html" target="_top" title="emailToken" alt="" coords="1103,2956,1265,3044">
+<area shape="rect" id="node27" href="farm_external_integration.html" target="_top" title="farm_external_integration" alt="" coords="1049,1735,1319,1823">
+<area shape="rect" id="node28" href="farmDataSchedule.html" target="_top" title="farmDataSchedule" alt="" coords="1077,3061,1291,3149">
+<area shape="rect" id="node29" href="farmExpense.html" target="_top" title="farmExpense" alt="" coords="1436,3113,1610,3201">
+<area shape="rect" id="node30" href="farmExpenseType.html" target="_top" title="farmExpenseType" alt="" coords="1079,3167,1290,3255">
+<area shape="rect" id="node31" href="fertilizer.html" target="_top" title="fertilizer" alt="" coords="1117,3376,1252,3464">
+<area shape="rect" id="node32" href="field_work_task.html" target="_top" title="field_work_task" alt="" coords="1757,815,1950,903">
+<area shape="rect" id="node33" href="field_work_type.html" target="_top" title="field_work_type" alt="" coords="1087,1045,1281,1133">
+<area shape="rect" id="node34" href="task.html" target="_top" title="task" alt="" coords="1436,1021,1610,1109">
+<area shape="rect" id="node59" href="task_type.html" target="_top" title="task_type" alt="" coords="1105,1151,1263,1239">
+<area shape="rect" id="node35" href="finance_report.html" target="_top" title="finance_report" alt="" coords="1092,3481,1276,3569">
+<area shape="rect" id="node36" href="irrigation_type.html" target="_top" title="irrigation_type" alt="" coords="465,268,649,356">
+<area shape="rect" id="node37" href="location_defaults.html" target="_top" title="location_defaults" alt="" coords="752,201,956,289">
+<area shape="rect" id="node38" href="management_plan.html" target="_top" title="management_plan" alt="" coords="1747,492,1960,580">
+<area shape="rect" id="node39" href="management_plan_group.html" target="_top" title="management_plan_group" alt="" coords="423,529,691,617">
+<area shape="rect" id="node40" href="nitrogenSchedule.html" target="_top" title="nitrogenSchedule" alt="" coords="1080,1912,1288,2000">
+<area shape="rect" id="node41" href="nomination.html" target="_top" title="nomination" alt="" coords="1105,4184,1264,4272">
+<area shape="rect" id="node42" href="nomination_type.html" target="_top" title="nomination_type" alt="" coords="456,4188,658,4276">
+<area shape="rect" id="node43" href="nomination_status.html" target="_top" title="nomination_status" alt="" coords="1416,4157,1631,4245">
+<area shape="rect" id="node44" href="nomination_workflow.html" target="_top" title="nomination_workflow" alt="" coords="735,4251,973,4339">
+<area shape="rect" id="node45" href="notification.html" target="_top" title="notification" alt="" coords="1101,4325,1267,4413">
+<area shape="rect" id="node46" href="notification_user.html" target="_top" title="notification_user" alt="" coords="1422,4393,1624,4481">
+<area shape="rect" id="node47" href="organic_history.html" target="_top" title="organic_history" alt="" coords="757,320,951,408">
+<area shape="rect" id="node48" href="organicCertifierSurvey.html" target="_top" title="organicCertifierSurvey" alt="" coords="1400,880,1646,968">
+<area shape="rect" id="node49" href="userFarm.html" target="_top" title="userFarm" alt="" coords="1101,804,1267,892">
+<area shape="rect" id="node50" href="password.html" target="_top" title="password" alt="" coords="483,4551,631,4639">
+<area shape="rect" id="node51" href="pesticide.html" target="_top" title="pesticide" alt="" coords="1113,3587,1256,3675">
+<area shape="rect" id="node52" href="price.html" target="_top" title="price" alt="" coords="1450,1821,1596,1909">
+<area shape="rect" id="node53" href="product.html" target="_top" title="product" alt="" coords="1105,2588,1263,2676">
+<area shape="rect" id="node54" href="release_badge.html" target="_top" title="release_badge" alt="" coords="465,5,649,93">
+<area shape="rect" id="node55" href="revenue_type.html" target="_top" title="revenue_type" alt="" coords="1096,3903,1272,3991">
+<area shape="rect" id="node56" href="sale.html" target="_top" title="sale" alt="" coords="1444,3744,1602,3832">
+<area shape="rect" id="node57" href="shift.html" target="_top" title="shift" alt="" coords="1450,723,1596,811">
+<area shape="rect" id="node58" href="shiftTask.html" target="_top" title="shiftTask" alt="" coords="2148,551,2294,639">
+<area shape="rect" id="node60" href="showedSpotlight.html" target="_top" title="showedSpotlight" alt="" coords="456,111,658,199">
+<area shape="rect" id="node61" href="soil_amendment_task_products.html" target="_top" title="soil_amendment_task_products" alt="" coords="1695,2451,2012,2539">
+<area shape="rect" id="node62" href="supportTicket.html" target="_top" title="supportTicket" alt="" coords="1095,3692,1274,3780">
+<area shape="rect" id="node63" href="task_animal_batch_relationship.html" target="_top" title="task_animal_batch_relationship" alt="" coords="2063,1439,2379,1527">
+<area shape="rect" id="node64" href="task_animal_relationship.html" target="_top" title="task_animal_relationship" alt="" coords="2089,1745,2353,1833">
+<area shape="rect" id="node65" href="userLog.html" target="_top" title="userLog" alt="" coords="1104,3797,1265,3885">
+<area shape="rect" id="node67" href="waterBalanceSchedule.html" target="_top" title="waterBalanceSchedule" alt="" coords="1061,1629,1308,1717">
+<area shape="rect" id="node68" href="yield.html" target="_top" title="yield" alt="" coords="1450,1683,1596,1771">
+</map>
+                                        <a name='diagram'><img id="twodegreesDegreeImg" src="../diagrams/tables/custom_animal_type.2degrees.png" usemap="#twoDegreesRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="oneimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="oneDegreeRelationshipsDiagramImplied" name="oneDegreeRelationshipsDiagramImplied">
+<area shape="rect" id="node1" href="animal.html" target="_top" title="animal" alt="" coords="1221,5,1475,504">
+<area shape="rect" id="node2" href="users.html" target="_top" title="users" alt="" coords="5,552,215,728">
+<area shape="rect" id="node3" href="custom_animal_breed.html" target="_top" title="custom_animal_breed" alt="" coords="935,500,1177,764">
+<area shape="rect" id="node4" href="custom_animal_type.html" target="_top" title="custom_animal_type" alt="" coords="556,397,891,701">
+<area shape="rect" id="node5" href="farm.html" target="_top" title="farm" alt="" coords="259,321,512,556">
+<area shape="rect" id="node6" href="animal_batch.html" target="_top" title="animal_batch" alt="" coords="1221,521,1475,932">
+</map>
+                                        <a name='diagram'><img id="oneimpliedDegreeImg" src="../diagrams/tables/custom_animal_type.implied1degrees.png" usemap="#oneDegreeRelationshipsDiagramImplied" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="twoimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="twoDegreesRelationshipsDiagramImplied" name="twoDegreesRelationshipsDiagramImplied">
+<area shape="rect" id="node1" href="animal.html" target="_top" title="animal" alt="" coords="1776,1661,1931,1749">
+<area shape="rect" id="node2" href="animal_removal_reason.html" target="_top" title="animal_removal_reason" alt="" coords="1396,1873,1651,1961">
+<area shape="rect" id="node3" href="users.html" target="_top" title="users" alt="" coords="212,2791,379,2879">
+<area shape="rect" id="node4" href="custom_animal_breed.html" target="_top" title="custom_animal_breed" alt="" coords="1402,2192,1644,2280">
+<area shape="rect" id="node5" href="custom_animal_type.html" target="_top" title="custom_animal_type" alt="" coords="1017,1724,1352,2028">
+<area shape="rect" id="node6" href="default_animal_breed.html" target="_top" title="default_animal_breed" alt="" coords="1404,1979,1642,2067">
+<area shape="rect" id="node7" href="default_animal_type.html" target="_top" title="default_animal_type" alt="" coords="1071,1583,1298,1671">
+<area shape="rect" id="node8" href="farm.html" target="_top" title="farm" alt="" coords="771,2568,937,2656">
+<area shape="rect" id="node9" href="animal_identifier_color.html" target="_top" title="animal_identifier_color" alt="" coords="1399,1203,1647,1291">
+<area shape="rect" id="node10" href="animal_identifier_type.html" target="_top" title="animal_identifier_type" alt="" coords="1402,1449,1644,1537">
+<area shape="rect" id="node11" href="location.html" target="_top" title="location" alt="" coords="470,1531,644,1619">
+<area shape="rect" id="node12" href="animal_origin.html" target="_top" title="animal_origin" alt="" coords="1434,1768,1612,1856">
+<area shape="rect" id="node13" href="animal_sex.html" target="_top" title="animal_sex" alt="" coords="1444,2412,1603,2500">
+<area shape="rect" id="node68" href="user_status.html" target="_top" title="user_status" alt="" coords="5,2788,168,2876">
+<area shape="rect" id="node27" href="countries.html" target="_top" title="countries" alt="" coords="484,2565,630,2653">
+<area shape="rect" id="node14" href="animal_batch.html" target="_top" title="animal_batch" alt="" coords="1766,2121,1941,2209">
+<area shape="rect" id="node15" href="animal_batch_group_relationship.html" target="_top" title="animal_batch_group_relationship" alt="" coords="2056,2852,2386,2940">
+<area shape="rect" id="node16" href="animal_group.html" target="_top" title="animal_group" alt="" coords="765,3427,943,3515">
+<area shape="rect" id="node17" href="animal_batch_sex_detail.html" target="_top" title="animal_batch_sex_detail" alt="" coords="2090,4105,2352,4193">
+<area shape="rect" id="node18" href="animal_batch_use_relationship.html" target="_top" title="animal_batch_use_relationship" alt="" coords="2066,2119,2377,2207">
+<area shape="rect" id="node19" href="animal_group_relationship.html" target="_top" title="animal_group_relationship" alt="" coords="2082,1977,2360,2065">
+<area shape="rect" id="node20" href="animal_union_batch_id_view.html" target="_top" title="animal_union_batch_id_view" alt="" coords="1038,2097,1331,2161">
+<area shape="rect" id="node21" href="animal_use_relationship.html" target="_top" title="animal_use_relationship" alt="" coords="2091,1659,2351,1747">
+<area shape="rect" id="node22" href="crop.html" target="_top" title="crop" alt="" coords="1105,1333,1263,1421">
+<area shape="rect" id="node23" href="crop_variety.html" target="_top" title="crop_variety" alt="" coords="1439,477,1607,565">
+<area shape="rect" id="node24" href="disease.html" target="_top" title="disease" alt="" coords="1111,3059,1257,3147">
+<area shape="rect" id="node25" href="document.html" target="_top" title="document" alt="" coords="1109,3164,1259,3252">
+<area shape="rect" id="node26" href="emailToken.html" target="_top" title="emailToken" alt="" coords="1103,3269,1265,3357">
+<area shape="rect" id="node28" href="farm_external_integration.html" target="_top" title="farm_external_integration" alt="" coords="1049,2179,1319,2267">
+<area shape="rect" id="node29" href="farmDataSchedule.html" target="_top" title="farmDataSchedule" alt="" coords="1077,3375,1291,3463">
+<area shape="rect" id="node30" href="farmExpense.html" target="_top" title="farmExpense" alt="" coords="1436,2939,1610,3027">
+<area shape="rect" id="node31" href="farmExpenseType.html" target="_top" title="farmExpenseType" alt="" coords="1079,2901,1290,2989">
+<area shape="rect" id="node32" href="fertilizer.html" target="_top" title="fertilizer" alt="" coords="1117,3657,1252,3745">
+<area shape="rect" id="node33" href="field_work_task.html" target="_top" title="field_work_task" alt="" coords="1757,761,1950,849">
+<area shape="rect" id="node34" href="field_work_type.html" target="_top" title="field_work_type" alt="" coords="1087,915,1281,1003">
+<area shape="rect" id="node35" href="task.html" target="_top" title="task" alt="" coords="1436,1009,1610,1097">
+<area shape="rect" id="node61" href="task_type.html" target="_top" title="task_type" alt="" coords="1105,1020,1263,1108">
+<area shape="rect" id="node36" href="finance_report.html" target="_top" title="finance_report" alt="" coords="1092,3763,1276,3851">
+<area shape="rect" id="node37" href="harvest_use_type.html" target="_top" title="harvest_use_type" alt="" coords="1080,2284,1288,2372">
+<area shape="rect" id="node38" href="irrigation_type.html" target="_top" title="irrigation_type" alt="" coords="1092,476,1276,564">
+<area shape="rect" id="node39" href="location_defaults.html" target="_top" title="location_defaults" alt="" coords="1421,372,1625,460">
+<area shape="rect" id="node40" href="management_plan.html" target="_top" title="management_plan" alt="" coords="1747,291,1960,379">
+<area shape="rect" id="node41" href="management_plan_group.html" target="_top" title="management_plan_group" alt="" coords="423,268,691,356">
+<area shape="rect" id="node42" href="nitrogenSchedule.html" target="_top" title="nitrogenSchedule" alt="" coords="1080,2389,1288,2477">
+<area shape="rect" id="node43" href="nomination.html" target="_top" title="nomination" alt="" coords="1105,4236,1264,4324">
+<area shape="rect" id="node44" href="nomination_type.html" target="_top" title="nomination_type" alt="" coords="456,4196,658,4284">
+<area shape="rect" id="node45" href="nomination_status.html" target="_top" title="nomination_status" alt="" coords="1416,4313,1631,4401">
+<area shape="rect" id="node46" href="nomination_workflow.html" target="_top" title="nomination_workflow" alt="" coords="735,4272,973,4360">
+<area shape="rect" id="node47" href="notification.html" target="_top" title="notification" alt="" coords="1101,4549,1267,4637">
+<area shape="rect" id="node48" href="notification_user.html" target="_top" title="notification_user" alt="" coords="1422,4481,1624,4569">
+<area shape="rect" id="node49" href="organic_history.html" target="_top" title="organic_history" alt="" coords="757,372,951,460">
+<area shape="rect" id="node50" href="organicCertifierSurvey.html" target="_top" title="organicCertifierSurvey" alt="" coords="1400,779,1646,867">
+<area shape="rect" id="node51" href="userFarm.html" target="_top" title="userFarm" alt="" coords="1101,757,1267,845">
+<area shape="rect" id="node52" href="password.html" target="_top" title="password" alt="" coords="483,4707,631,4795">
+<area shape="rect" id="node53" href="pesticide.html" target="_top" title="pesticide" alt="" coords="1113,3868,1256,3956">
+<area shape="rect" id="node54" href="price.html" target="_top" title="price" alt="" coords="1450,1344,1596,1432">
+<area shape="rect" id="node55" href="product.html" target="_top" title="product" alt="" coords="1105,2744,1263,2832">
+<area shape="rect" id="node56" href="release_badge.html" target="_top" title="release_badge" alt="" coords="465,5,649,93">
+<area shape="rect" id="node57" href="revenue_type.html" target="_top" title="revenue_type" alt="" coords="1096,3552,1272,3640">
+<area shape="rect" id="node58" href="sale.html" target="_top" title="sale" alt="" coords="1444,3853,1602,3941">
+<area shape="rect" id="node59" href="shift.html" target="_top" title="shift" alt="" coords="1450,588,1596,676">
+<area shape="rect" id="node60" href="shiftTask.html" target="_top" title="shiftTask" alt="" coords="2148,440,2294,528">
+<area shape="rect" id="node62" href="showedSpotlight.html" target="_top" title="showedSpotlight" alt="" coords="456,111,658,199">
+<area shape="rect" id="node63" href="soil_amendment_task_products.html" target="_top" title="soil_amendment_task_products" alt="" coords="1695,2791,2012,2879">
+<area shape="rect" id="node64" href="supportTicket.html" target="_top" title="supportTicket" alt="" coords="1095,3973,1274,4061">
+<area shape="rect" id="node65" href="task_animal_batch_relationship.html" target="_top" title="task_animal_batch_relationship" alt="" coords="2063,1800,2379,1888">
+<area shape="rect" id="node66" href="task_animal_relationship.html" target="_top" title="task_animal_relationship" alt="" coords="2089,1280,2353,1368">
+<area shape="rect" id="node67" href="userLog.html" target="_top" title="userLog" alt="" coords="1104,4079,1265,4167">
+<area shape="rect" id="node69" href="waterBalanceSchedule.html" target="_top" title="waterBalanceSchedule" alt="" coords="1061,2531,1308,2619">
+<area shape="rect" id="node70" href="yield.html" target="_top" title="yield" alt="" coords="1450,1555,1596,1643">
+</map>
+                                        <a name='diagram'><img id="twoimpliedDegreeImg" src="../diagrams/tables/custom_animal_type.implied2degrees.png" usemap="#twoDegreesRelationshipsDiagramImplied" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- /.box-body -->
+                    </div>
+                </section>
+                <script>
+                    var config = {
+                        pagination: true
+                    }
+                </script>
+            </div>
+            <!-- /.content-wrapper -->
+            <footer class="main-footer">
+                <div>
+                    <div class="pull-right hidden-xs">
+                        <a href="https://github.com/schemaspy/schemaspy" title="GitHub for SchemaSpy"><i class="fa fa-github-square fa-2x"></i></a>
+                        <a href="http://stackoverflow.com/questions/tagged/schemaspy" title="StackOverflow for SchemaSpy"><i class="fa fa-stack-overflow fa-2x"></i></a>
+                    </div>
+                    <strong>Generated by <a href="http://schemaspy.org/" class="logo-text"><i class="fa fa-database"></i> SchemaSpy 6.2.4</a></strong>
+                </div>
+                <!-- /.container -->
+            </footer>
+        </div>
+        <!-- ./wrapper -->
+
+        <!-- jQuery 2.2.3 -->
+        <script src="../bower/admin-lte/plugins/jQuery/jquery-2.2.3.min.js"></script>
+        <script src="../bower/admin-lte/plugins/jQueryUI/jquery-ui.min.js"></script>
+        <!-- Bootstrap 3.3.5 -->
+        <script src="../bower/admin-lte/bootstrap/js/bootstrap.min.js"></script>
+        <!-- DataTables -->
+        <script src="../bower/datatables.net/jquery.dataTables.min.js"></script>
+        <script src="../bower/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+        <script src="../bower/datatables.net-buttons/dataTables.buttons.min.js"></script>
+        <script src="../bower/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.html5.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.print.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.colVis.min.js"></script>
+        <!-- SheetJS -->
+        <script src="../bower/js-xlsx/xlsx.full.min.js"></script>
+        <!-- pdfmake -->
+        <script src="../bower/pdfmake/pdfmake.min.js"></script>
+        <script src="../bower/pdfmake/vfs_fonts.js"></script>
+        <!-- SlimScroll -->
+        <script src="../bower/admin-lte/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+        <!-- FastClick -->
+        <script src="../bower/admin-lte/plugins/fastclick/fastclick.js"></script>
+        <!-- Salvattore -->
+        <script src="../bower/salvattore/salvattore.min.js"></script>
+        <!-- AnchorJS -->
+        <script src="../bower/anchor-js/anchor.min.js"></script>
+        <!-- CodeMirror -->
+        <script src="../bower/codemirror/codemirror.js"></script>
+        <script src="../bower/codemirror/sql.js"></script>
+        <!-- AdminLTE App -->
+        <script src="../bower/admin-lte/dist/js/app.min.js"></script>
+        <script src="table.js"></script>
+        <script src="../schemaSpy.js"></script>
+    </body>
+</html>

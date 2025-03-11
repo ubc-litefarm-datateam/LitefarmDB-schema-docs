@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>irrigation_task - pg-litefarm.public</title>
+        <!-- Tell the browser to be responsive to screen width -->
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <link rel="icon" type="image/png" sizes="16x16" href="../favicon.png">
+        <!-- Bootstrap 3.3.5 -->
+        <link rel="stylesheet" href="../bower/admin-lte/bootstrap/css/bootstrap.min.css">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="../bower/font-awesome/css/font-awesome.min.css">
+        <!-- Ionicons -->
+        <link rel="stylesheet" href="../bower/ionicons/css/ionicons.min.css">
+        <!-- DataTables -->
+        <link rel="stylesheet" href="../bower/datatables.net-bs/css/dataTables.bootstrap.min.css">
+        <link rel="stylesheet" href="../bower/datatables.net-buttons-bs/css/buttons.bootstrap.min.css">
+        <!-- Code Mirror -->
+        <link rel="stylesheet" href="../bower/codemirror/codemirror.css">
+        <!-- Fonts -->
+        <link href='../fonts/indieflower/indie-flower.css' rel='stylesheet' type='text/css'>
+        <link href='../fonts/source-sans-pro/source-sans-pro.css' rel='stylesheet' type='text/css'>
+
+        <!-- Theme style -->
+        <link rel="stylesheet" href="../bower/admin-lte/dist/css/AdminLTE.min.css">
+        <!-- Salvattore -->
+        <link rel="stylesheet" href="../bower/salvattore/salvattore.css">
+        <!-- AdminLTE Skins. Choose a skin from the css/skins
+           folder instead of downloading all of them to reduce the load. -->
+        <link rel="stylesheet" href="../bower/admin-lte/dist/css/skins/_all-skins.min.css">
+        <!-- SchemaSpy -->
+        <link rel="stylesheet" href="../schemaSpy.css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="../bower/html5shiv/html5shiv.min.js"></script>
+        <script src="../bower/respond/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
+    <body class="hold-transition skin-blue layout-top-nav">
+        <div class="wrapper">
+            <header class="main-header">
+                <nav class="navbar navbar-static-top">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <a href="../index.html" class="navbar-brand"><b>pg-litefarm</b></a><span class="navbar-brand" style="padding-left: 0">.public</span>
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse"><i class="fa fa-bars"></i></button>
+                        </div>
+
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                            <ul class="nav navbar-nav">
+                                <li><a href="../index.html">Tables <span class="sr-only">(current)</span></a></li>
+                                <li><a href="../columns.html" title="All of the columns in the schema">Columns</a></li>
+                                <li><a href="../constraints.html" title="Useful for diagnosing error messages that just give constraint name or number">Constraints</a></li>
+                                <li><a href="../relationships.html" title="Diagram of table relationships">Relationships</a></li>
+                                <li><a href="../orphans.html" title="View of tables with neither parents nor children">Orphan&nbsp;Tables</a></li>
+                                <li><a href="../anomalies.html" title="Things that might not be quite right">Anomalies</a></li>
+                                <li><a href="../routines.html" title="Procedures and functions">Routines</a></li>
+                            </ul>
+                        </div>
+                        <!-- /.navbar-collapse -->
+                        <!-- Navbar Right Menu -->
+                    </div>
+                    <!-- /.container-fluid -->
+                </nav>
+            </header>
+            <!-- Main content -->
+            <!-- Full Width Column -->
+            <div class="content-wrapper">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <h1>irrigation_task</h1><p><span id="recordNumber">585</span> rows</p><br />
+                </section>
+                <!-- Main content -->
+                <section class="content">
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+                            <h3 id="Columns" class="box-title">Columns</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <table
+                                    id="standard_table"
+                                    class="table table-bordered table-striped dataTable"
+                                    role="grid"
+                                    data-paging="true"
+                                    data-page-length="10"
+                                    data-length-change="false">
+                                <thead align='left'>
+                                <tr>
+                                    <th>Column</th>
+                                    <th>Type</th>
+                                    <th>Size</th>
+                                    <th title='Are nulls allowed?'>Nulls</th>
+                                    <th title='Is column automatically updated?'>Auto</th>
+                                    <th title='Default value'>Default</th>
+                                    <th title='Columns in tables that reference this column'>Children</th>
+                                    <th title='Columns in tables that are referenced by this column'>Parents</th>
+                                    <th title='Comments' class="toggle"><span>Comments</span></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="task_id">task_id</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="irrigation_task.task_id references task.task_id via irrigationlog_activity_id_foreign"><a href='task.html'>task</a><span class='relatedKey'>.task_id</span></td>
+                                                <td class="constraint detail">irrigationlog_activity_id_foreign</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="irrigation_type_name">irrigation_type_name</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="estimated_flow_rate">estimated_flow_rate</span></td>
+                                    <td>numeric</td>
+                                    <td>36,12</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="estimated_duration">estimated_duration</span></td>
+                                    <td>float4</td>
+                                    <td>8,8</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="estimated_duration_unit">estimated_duration_unit</span></td>
+                                    <td>varchar</td>
+                                    <td>255</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="estimated_flow_rate_unit">estimated_flow_rate_unit</span></td>
+                                    <td>varchar</td>
+                                    <td>255</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="location_id">location_id</span></td>
+                                    <td>uuid</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="irrigation_task.location_id references location.location_id via irrigation_task_location_id_foreign"><a href='location.html'>location</a><span class='relatedKey'>.location_id</span></td>
+                                                <td class="constraint detail">irrigation_task_location_id_foreign</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="estimated_water_usage">estimated_water_usage</span></td>
+                                    <td>numeric</td>
+                                    <td>36,12</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="estimated_water_usage_unit">estimated_water_usage_unit</span></td>
+                                    <td>varchar</td>
+                                    <td>255</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="application_depth">application_depth</span></td>
+                                    <td>numeric</td>
+                                    <td>36,12</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="application_depth_unit">application_depth_unit</span></td>
+                                    <td>varchar</td>
+                                    <td>255</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="measuring_type">measuring_type</span></td>
+                                    <td>varchar</td>
+                                    <td>255</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="irrigation_type_id">irrigation_type_id</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="irrigation_task.irrigation_type_id references irrigation_type.irrigation_type_id via irrigation_task_irrigation_type_id_foreign"><a href='irrigation_type.html'>irrigation_type</a><span class='relatedKey'>.irrigation_type_id</span></td>
+                                                <td class="constraint detail">irrigation_task_irrigation_type_id_foreign</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="percent_of_location_irrigated">percent_of_location_irrigated</span></td>
+                                    <td>float4</td>
+                                    <td>8,8</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="default_location_flow_rate">default_location_flow_rate</span></td>
+                                    <td>bool</td>
+                                    <td>1</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>false</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="default_location_application_depth">default_location_application_depth</span></td>
+                                    <td>bool</td>
+                                    <td>1</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>false</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="default_irrigation_task_type_location">default_irrigation_task_type_location</span></td>
+                                    <td>bool</td>
+                                    <td>1</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>false</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="default_irrigation_task_type_measurement">default_irrigation_task_type_measurement</span></td>
+                                    <td>bool</td>
+                                    <td>1</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>false</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <i class="fa fa-sitemap"></i>
+                            <h3 id="Indexes" class="box-title">Indexes</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <table
+                                    id="indexes_table"
+                                    class="table table-bordered table-striped dataTable"
+                                    role="grid"
+                                    data-paging="true"
+                                    data-page-length="10"
+                                    data-length-change="false">
+                                <thead>
+                                <tr>
+                                    <th>Constraint Name</th>
+                                    <th>Type</th>
+                                    <th>Sort</th>
+                                    <th>Column(s)</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey'></i> irrigationLog_pkey</td>
+                                    <td>Primary key</td>
+                                    <td><span title='Ascending'>Asc</span></td>
+                                    <td>task_id</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div><!-- /.box-body -->
+                    </div>
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <i class="fa fa-code-fork"></i>
+                            <h3 id="Relationships" class="box-title">Relationships</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <div class="nav-tabs-custom"><!-- Tabs within a box -->
+                                <h5>Close relationships within degrees of separation</h5>
+                                <ul class="nav nav-tabs pull-left ui-sortable-handle">
+                                    <li class="active"><a href="#oneDegreeImg-chart" data-toggle="tab" aria-expanded="true">One</a></li>
+                                    <li class=""><a href="#twodegreesDegreeImg-chart" data-toggle="tab" aria-expanded="true">Two degrees</a></li>
+                                    <li class=""><a href="#oneimpliedDegreeImg-chart" data-toggle="tab" aria-expanded="true">One implied</a></li>
+                                    <li class=""><a href="#twoimpliedDegreeImg-chart" data-toggle="tab" aria-expanded="true">Two implied</a></li>
+                                </ul>
+                                <div class="tab-content no-padding">
+                                    <div class="chart tab-pane active" id="oneDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="oneDegreeRelationshipsDiagram" name="oneDegreeRelationshipsDiagram">
+<area shape="rect" id="node1" href="irrigation_task.html" target="_top" title="irrigation_task" alt="" coords="336,108,839,705">
+<area shape="rect" id="node2" href="irrigation_type.html" target="_top" title="irrigation_type" alt="" coords="5,509,292,715">
+<area shape="rect" id="node3" href="location.html" target="_top" title="location" alt="" coords="47,287,251,492">
+<area shape="rect" id="node4" href="task.html" target="_top" title="task" alt="" coords="17,5,281,269">
+</map>
+                                        <a name='diagram'><img id="oneDegreeImg" src="../diagrams/tables/irrigation_task.1degree.png" usemap="#oneDegreeRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="twodegreesDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="twoDegreesRelationshipsDiagram" name="twoDegreesRelationshipsDiagram">
+<area shape="rect" id="node1" href="animal.html" target="_top" title="animal" alt="" coords="1100,225,1254,313">
+<area shape="rect" id="node2" href="users.html" target="_top" title="users" alt="" coords="5,2450,172,2538">
+<area shape="rect" id="node3" href="farm.html" target="_top" title="farm" alt="" coords="576,2128,742,2216">
+<area shape="rect" id="node4" href="location.html" target="_top" title="location" alt="" coords="257,1193,461,1398">
+<area shape="rect" id="node5" href="animal_batch.html" target="_top" title="animal_batch" alt="" coords="816,2128,991,2216">
+<area shape="rect" id="node6" href="animal_movement_task.html" target="_top" title="animal_movement_task" alt="" coords="1488,2664,1742,2752">
+<area shape="rect" id="node7" href="task.html" target="_top" title="task" alt="" coords="1045,2556,1309,2820">
+<area shape="rect" id="node40" href="task_type.html" target="_top" title="task_type" alt="" coords="824,2530,983,2618">
+<area shape="rect" id="node8" href="animal_movement_task_purpose_re_17e6e3c6.html" target="_top" title="animal_movement_task_purpose_relationship" alt="" coords="1402,2769,1828,2857">
+<area shape="rect" id="node9" href="barn.html" target="_top" title="barn" alt="" coords="586,1144,732,1232">
+<area shape="rect" id="node10" href="buffer_zone.html" target="_top" title="buffer_zone" alt="" coords="577,1249,741,1337">
+<area shape="rect" id="node11" href="ceremonial_area.html" target="_top" title="ceremonial_area" alt="" coords="560,1354,759,1442">
+<area shape="rect" id="node12" href="cleaning_task.html" target="_top" title="cleaning_task" alt="" coords="1525,2874,1704,2962">
+<area shape="rect" id="node13" href="custom_location.html" target="_top" title="custom_location" alt="" coords="559,1460,759,1548">
+<area shape="rect" id="node14" href="farm_site_boundary.html" target="_top" title="farm_site_boundary" alt="" coords="546,1565,772,1653">
+<area shape="rect" id="node15" href="fence.html" target="_top" title="fence" alt="" coords="592,1670,726,1758">
+<area shape="rect" id="node16" href="field.html" target="_top" title="field" alt="" coords="580,1776,738,1864">
+<area shape="rect" id="node17" href="field_work_task.html" target="_top" title="field_work_task" alt="" coords="1518,3401,1712,3489">
+<area shape="rect" id="node18" href="figure.html" target="_top" title="figure" alt="" coords="576,1881,742,1969">
+<area shape="rect" id="node19" href="garden.html" target="_top" title="garden" alt="" coords="586,1986,732,2074">
+<area shape="rect" id="node20" href="gate.html" target="_top" title="gate" alt="" coords="592,52,726,140">
+<area shape="rect" id="node21" href="greenhouse.html" target="_top" title="greenhouse" alt="" coords="577,157,741,245">
+<area shape="rect" id="node22" href="harvest_task.html" target="_top" title="harvest_task" alt="" coords="1529,2980,1700,3068">
+<area shape="rect" id="node23" href="irrigation_task.html" target="_top" title="irrigation_task" alt="" coords="1363,996,1866,1593">
+<area shape="rect" id="node24" href="irrigation_type.html" target="_top" title="irrigation_type" alt="" coords="216,2153,502,2358">
+<area shape="rect" id="node25" href="location_defaults.html" target="_top" title="location_defaults" alt="" coords="557,2269,761,2357">
+<area shape="rect" id="node26" href="location_tasks.html" target="_top" title="location_tasks" alt="" coords="1523,214,1707,302">
+<area shape="rect" id="node27" href="maintenance_task.html" target="_top" title="maintenance_task" alt="" coords="1509,3085,1721,3173">
+<area shape="rect" id="node28" href="management_tasks.html" target="_top" title="management_tasks" alt="" coords="1504,1716,1726,1804">
+<area shape="rect" id="node29" href="planting_management_plan.html" target="_top" title="planting_management_plan" alt="" coords="1035,1768,1319,1856">
+<area shape="rect" id="node30" href="natural_area.html" target="_top" title="natural_area" alt="" coords="575,298,743,386">
+<area shape="rect" id="node31" href="organic_history.html" target="_top" title="organic_history" alt="" coords="562,2426,756,2514">
+<area shape="rect" id="node32" href="pest_control_task.html" target="_top" title="pest_control_task" alt="" coords="1510,3190,1720,3278">
+<area shape="rect" id="node33" href="pin.html" target="_top" title="pin" alt="" coords="600,404,718,492">
+<area shape="rect" id="node34" href="plant_task.html" target="_top" title="plant_task" alt="" coords="1539,1821,1691,1909">
+<area shape="rect" id="node35" href="residence.html" target="_top" title="residence" alt="" coords="585,509,733,597">
+<area shape="rect" id="node36" href="sale_task.html" target="_top" title="sale_task" alt="" coords="1542,3296,1688,3384">
+<area shape="rect" id="node37" href="scouting_task.html" target="_top" title="scouting_task" alt="" coords="1525,2032,1705,2120">
+<area shape="rect" id="node38" href="sensor.html" target="_top" title="sensor" alt="" coords="590,614,728,702">
+<area shape="rect" id="node39" href="shiftTask.html" target="_top" title="shiftTask" alt="" coords="1104,2449,1250,2537">
+<area shape="rect" id="node41" href="social_task.html" target="_top" title="social_task" alt="" coords="1535,2137,1694,2225">
+<area shape="rect" id="node42" href="soil_amendment_task.html" target="_top" title="soil_amendment_task" alt="" coords="1495,2242,1735,2330">
+<area shape="rect" id="node43" href="soil_amendment_task_products.html" target="_top" title="soil_amendment_task_products" alt="" coords="1456,3506,1774,3594">
+<area shape="rect" id="node44" href="soil_task.html" target="_top" title="soil_task" alt="" coords="1544,2348,1686,2436">
+<area shape="rect" id="node45" href="surface_water.html" target="_top" title="surface_water" alt="" coords="569,720,749,808">
+<area shape="rect" id="node46" href="task_animal_batch_relationship.html" target="_top" title="task_animal_batch_relationship" alt="" coords="1457,1926,1773,2014">
+<area shape="rect" id="node47" href="task_animal_relationship.html" target="_top" title="task_animal_relationship" alt="" coords="1483,557,1747,645">
+<area shape="rect" id="node48" href="transplant_task.html" target="_top" title="transplant_task" alt="" coords="1519,1610,1710,1698">
+<area shape="rect" id="node49" href="transport_task.html" target="_top" title="transport_task" alt="" coords="1523,2453,1707,2541">
+<area shape="rect" id="node50" href="wash_and_pack_task.html" target="_top" title="wash_and_pack_task" alt="" coords="1497,2558,1733,2646">
+<area shape="rect" id="node51" href="water_valve.html" target="_top" title="water_valve" alt="" coords="577,825,741,913">
+<area shape="rect" id="node52" href="watercourse.html" target="_top" title="watercourse" alt="" coords="576,930,743,1018">
+</map>
+                                        <a name='diagram'><img id="twodegreesDegreeImg" src="../diagrams/tables/irrigation_task.2degrees.png" usemap="#twoDegreesRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="oneimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="oneDegreeRelationshipsDiagramImplied" name="oneDegreeRelationshipsDiagramImplied">
+<area shape="rect" id="node1" href="irrigation_task.html" target="_top" title="irrigation_task" alt="" coords="336,108,839,705">
+<area shape="rect" id="node2" href="irrigation_type.html" target="_top" title="irrigation_type" alt="" coords="5,509,292,715">
+<area shape="rect" id="node3" href="location.html" target="_top" title="location" alt="" coords="47,287,251,492">
+<area shape="rect" id="node4" href="task.html" target="_top" title="task" alt="" coords="17,5,281,269">
+</map>
+                                        <a name='diagram'><img id="oneimpliedDegreeImg" src="../diagrams/tables/irrigation_task.implied1degrees.png" usemap="#oneDegreeRelationshipsDiagramImplied" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="twoimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="twoDegreesRelationshipsDiagramImplied" name="twoDegreesRelationshipsDiagramImplied">
+<area shape="rect" id="node1" href="animal.html" target="_top" title="animal" alt="" coords="1129,2317,1283,2405">
+<area shape="rect" id="node2" href="users.html" target="_top" title="users" alt="" coords="5,2569,172,2657">
+<area shape="rect" id="node3" href="farm.html" target="_top" title="farm" alt="" coords="493,2335,660,2423">
+<area shape="rect" id="node4" href="location.html" target="_top" title="location" alt="" coords="216,1503,420,1709">
+<area shape="rect" id="node5" href="animal_batch.html" target="_top" title="animal_batch" alt="" coords="789,2390,964,2478">
+<area shape="rect" id="node6" href="animal_movement_task.html" target="_top" title="animal_movement_task" alt="" coords="1517,3309,1771,3397">
+<area shape="rect" id="node7" href="task.html" target="_top" title="task" alt="" coords="1074,2569,1338,2833">
+<area shape="rect" id="node40" href="task_type.html" target="_top" title="task_type" alt="" coords="798,2709,956,2797">
+<area shape="rect" id="node8" href="animal_movement_task_purpose_re_17e6e3c6.html" target="_top" title="animal_movement_task_purpose_relationship" alt="" coords="1431,2045,1857,2133">
+<area shape="rect" id="node9" href="barn.html" target="_top" title="barn" alt="" coords="504,1102,649,1190">
+<area shape="rect" id="node10" href="buffer_zone.html" target="_top" title="buffer_zone" alt="" coords="494,1207,659,1295">
+<area shape="rect" id="node11" href="ceremonial_area.html" target="_top" title="ceremonial_area" alt="" coords="477,1313,676,1401">
+<area shape="rect" id="node12" href="cleaning_task.html" target="_top" title="cleaning_task" alt="" coords="1554,2150,1733,2238">
+<area shape="rect" id="node13" href="custom_location.html" target="_top" title="custom_location" alt="" coords="476,1454,677,1542">
+<area shape="rect" id="node14" href="farm_site_boundary.html" target="_top" title="farm_site_boundary" alt="" coords="464,1559,689,1647">
+<area shape="rect" id="node15" href="fence.html" target="_top" title="fence" alt="" coords="510,1665,643,1753">
+<area shape="rect" id="node16" href="field.html" target="_top" title="field" alt="" coords="497,1842,656,1930">
+<area shape="rect" id="node17" href="field_work_task.html" target="_top" title="field_work_task" alt="" coords="1547,3414,1741,3502">
+<area shape="rect" id="node18" href="figure.html" target="_top" title="figure" alt="" coords="493,1947,660,2035">
+<area shape="rect" id="node19" href="garden.html" target="_top" title="garden" alt="" coords="504,2053,649,2141">
+<area shape="rect" id="node20" href="gate.html" target="_top" title="gate" alt="" coords="510,2158,643,2246">
+<area shape="rect" id="node21" href="greenhouse.html" target="_top" title="greenhouse" alt="" coords="494,259,659,347">
+<area shape="rect" id="node22" href="harvest_task.html" target="_top" title="harvest_task" alt="" coords="1558,2255,1729,2343">
+<area shape="rect" id="node23" href="irrigation_task.html" target="_top" title="irrigation_task" alt="" coords="1392,155,1895,753">
+<area shape="rect" id="node24" href="irrigation_type.html" target="_top" title="irrigation_type" alt="" coords="733,151,1020,357">
+<area shape="rect" id="node25" href="location_defaults.html" target="_top" title="location_defaults" alt="" coords="1104,57,1308,145">
+<area shape="rect" id="node26" href="location_tasks.html" target="_top" title="location_tasks" alt="" coords="1552,1729,1736,1817">
+<area shape="rect" id="node27" href="maintenance_task.html" target="_top" title="maintenance_task" alt="" coords="1538,2361,1750,2449">
+<area shape="rect" id="node28" href="management_tasks.html" target="_top" title="management_tasks" alt="" coords="1533,1518,1755,1606">
+<area shape="rect" id="node29" href="planting_management_plan.html" target="_top" title="planting_management_plan" alt="" coords="1064,1413,1348,1501">
+<area shape="rect" id="node30" href="natural_area.html" target="_top" title="natural_area" alt="" coords="492,365,661,453">
+<area shape="rect" id="node31" href="organic_history.html" target="_top" title="organic_history" alt="" coords="480,2493,673,2581">
+<area shape="rect" id="node32" href="pest_control_task.html" target="_top" title="pest_control_task" alt="" coords="1539,2466,1749,2554">
+<area shape="rect" id="node33" href="pin.html" target="_top" title="pin" alt="" coords="518,470,635,558">
+<area shape="rect" id="node34" href="plant_task.html" target="_top" title="plant_task" alt="" coords="1568,1623,1720,1711">
+<area shape="rect" id="node35" href="residence.html" target="_top" title="residence" alt="" coords="502,575,651,663">
+<area shape="rect" id="node36" href="sale_task.html" target="_top" title="sale_task" alt="" coords="1571,2571,1717,2659">
+<area shape="rect" id="node37" href="scouting_task.html" target="_top" title="scouting_task" alt="" coords="1554,2677,1734,2765">
+<area shape="rect" id="node38" href="sensor.html" target="_top" title="sensor" alt="" coords="507,681,646,769">
+<area shape="rect" id="node39" href="shiftTask.html" target="_top" title="shiftTask" alt="" coords="1134,2854,1279,2942">
+<area shape="rect" id="node41" href="social_task.html" target="_top" title="social_task" alt="" coords="1564,2782,1723,2870">
+<area shape="rect" id="node42" href="soil_amendment_task.html" target="_top" title="soil_amendment_task" alt="" coords="1524,2887,1764,2975">
+<area shape="rect" id="node43" href="soil_amendment_task_products.html" target="_top" title="soil_amendment_task_products" alt="" coords="1485,3519,1803,3607">
+<area shape="rect" id="node44" href="soil_task.html" target="_top" title="soil_task" alt="" coords="1573,2993,1715,3081">
+<area shape="rect" id="node45" href="surface_water.html" target="_top" title="surface_water" alt="" coords="486,786,667,874">
+<area shape="rect" id="node46" href="task_animal_batch_relationship.html" target="_top" title="task_animal_batch_relationship" alt="" coords="1486,1834,1802,1922">
+<area shape="rect" id="node47" href="task_animal_relationship.html" target="_top" title="task_animal_relationship" alt="" coords="1512,1939,1776,2027">
+<area shape="rect" id="node48" href="transplant_task.html" target="_top" title="transplant_task" alt="" coords="1548,1413,1739,1501">
+<area shape="rect" id="node49" href="transport_task.html" target="_top" title="transport_task" alt="" coords="1552,3098,1736,3186">
+<area shape="rect" id="node50" href="wash_and_pack_task.html" target="_top" title="wash_and_pack_task" alt="" coords="1526,3203,1762,3291">
+<area shape="rect" id="node51" href="water_valve.html" target="_top" title="water_valve" alt="" coords="494,891,659,979">
+<area shape="rect" id="node52" href="watercourse.html" target="_top" title="watercourse" alt="" coords="493,997,660,1085">
+</map>
+                                        <a name='diagram'><img id="twoimpliedDegreeImg" src="../diagrams/tables/irrigation_task.implied2degrees.png" usemap="#twoDegreesRelationshipsDiagramImplied" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- /.box-body -->
+                    </div>
+                </section>
+                <script>
+                    var config = {
+                        pagination: true
+                    }
+                </script>
+            </div>
+            <!-- /.content-wrapper -->
+            <footer class="main-footer">
+                <div>
+                    <div class="pull-right hidden-xs">
+                        <a href="https://github.com/schemaspy/schemaspy" title="GitHub for SchemaSpy"><i class="fa fa-github-square fa-2x"></i></a>
+                        <a href="http://stackoverflow.com/questions/tagged/schemaspy" title="StackOverflow for SchemaSpy"><i class="fa fa-stack-overflow fa-2x"></i></a>
+                    </div>
+                    <strong>Generated by <a href="http://schemaspy.org/" class="logo-text"><i class="fa fa-database"></i> SchemaSpy 6.2.4</a></strong>
+                </div>
+                <!-- /.container -->
+            </footer>
+        </div>
+        <!-- ./wrapper -->
+
+        <!-- jQuery 2.2.3 -->
+        <script src="../bower/admin-lte/plugins/jQuery/jquery-2.2.3.min.js"></script>
+        <script src="../bower/admin-lte/plugins/jQueryUI/jquery-ui.min.js"></script>
+        <!-- Bootstrap 3.3.5 -->
+        <script src="../bower/admin-lte/bootstrap/js/bootstrap.min.js"></script>
+        <!-- DataTables -->
+        <script src="../bower/datatables.net/jquery.dataTables.min.js"></script>
+        <script src="../bower/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+        <script src="../bower/datatables.net-buttons/dataTables.buttons.min.js"></script>
+        <script src="../bower/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.html5.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.print.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.colVis.min.js"></script>
+        <!-- SheetJS -->
+        <script src="../bower/js-xlsx/xlsx.full.min.js"></script>
+        <!-- pdfmake -->
+        <script src="../bower/pdfmake/pdfmake.min.js"></script>
+        <script src="../bower/pdfmake/vfs_fonts.js"></script>
+        <!-- SlimScroll -->
+        <script src="../bower/admin-lte/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+        <!-- FastClick -->
+        <script src="../bower/admin-lte/plugins/fastclick/fastclick.js"></script>
+        <!-- Salvattore -->
+        <script src="../bower/salvattore/salvattore.min.js"></script>
+        <!-- AnchorJS -->
+        <script src="../bower/anchor-js/anchor.min.js"></script>
+        <!-- CodeMirror -->
+        <script src="../bower/codemirror/codemirror.js"></script>
+        <script src="../bower/codemirror/sql.js"></script>
+        <!-- AdminLTE App -->
+        <script src="../bower/admin-lte/dist/js/app.min.js"></script>
+        <script src="table.js"></script>
+        <script src="../schemaSpy.js"></script>
+    </body>
+</html>

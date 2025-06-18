@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?><database name="pg-litefarm" schema="public" type="PostgreSQL - 13.2 (Debian 13.2-1.pgdg100+1)">
    <tables>
-      <table catalog="pg-litefarm" name="animal" numRows="641" remarks="" schema="public" type="TABLE">
+      <table catalog="pg-litefarm" name="addon_partner" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('integrating_partner_partner_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial" typeCode="4">
+            <child catalog="pg-litefarm" column="addon_partner_id" foreignKey="farm_external_integration_partner_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="farm_addon"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="name" nullable="false" remarks="" size="255" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="access_token" nullable="true" remarks="" size="255" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="refresh_token" nullable="true" remarks="" size="255" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="root_url" nullable="true" remarks="" size="255" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="false" digits="0" id="5" name="deactivated" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="integrating_partner_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table catalog="pg-litefarm" name="animal" numRows="1842" remarks="" schema="public" type="TABLE">
          <column autoUpdated="true" defaultValue="nextval('animal_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial" typeCode="4">
             <child catalog="pg-litefarm" column="animal_id" foreignKey="animal_group_relationship_animal_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="animal_group_relationship"/>
             <child catalog="pg-litefarm" column="animal_id" foreignKey="animal_use_relationship_animal_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="animal_use_relationship"/>
@@ -68,7 +82,7 @@
             <column ascending="true" name="id"/>
          </index>
       </table>
-      <table catalog="pg-litefarm" name="animal_batch" numRows="176" remarks="" schema="public" type="TABLE">
+      <table catalog="pg-litefarm" name="animal_batch" numRows="385" remarks="" schema="public" type="TABLE">
          <column autoUpdated="true" defaultValue="nextval('animal_batch_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial" typeCode="4">
             <child catalog="pg-litefarm" column="animal_batch_id" foreignKey="animal_batch_group_relationship_animal_batch_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="animal_batch_group_relationship"/>
             <child catalog="pg-litefarm" column="animal_batch_id" foreignKey="animal_batch_sex_detail_batch_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="animal_batch_sex_detail"/>
@@ -139,7 +153,7 @@
             <column ascending="true" name="id"/>
          </index>
       </table>
-      <table catalog="pg-litefarm" name="animal_batch_sex_detail" numRows="418" remarks="" schema="public" type="TABLE">
+      <table catalog="pg-litefarm" name="animal_batch_sex_detail" numRows="946" remarks="" schema="public" type="TABLE">
          <column autoUpdated="true" defaultValue="nextval('animal_batch_sex_detail_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial" typeCode="4"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="animal_batch_id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
             <parent catalog="pg-litefarm" column="id" foreignKey="animal_batch_sex_detail_batch_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="animal_batch"/>
@@ -162,7 +176,7 @@
             <column ascending="true" name="id"/>
          </index>
       </table>
-      <table catalog="pg-litefarm" name="animal_batch_use_relationship" numRows="46" remarks="" schema="public" type="TABLE">
+      <table catalog="pg-litefarm" name="animal_batch_use_relationship" numRows="128" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="animal_batch_id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
             <parent catalog="pg-litefarm" column="id" foreignKey="animal_batch_use_relationship_animal_batch_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="animal_batch"/>
          </column>
@@ -251,7 +265,7 @@
             <column ascending="true" name="task_id"/>
          </index>
       </table>
-      <table catalog="pg-litefarm" name="animal_movement_task_purpose_relationship" numRows="48" remarks="" schema="public" type="TABLE">
+      <table catalog="pg-litefarm" name="animal_movement_task_purpose_relationship" numRows="100" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="task_id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
             <parent catalog="pg-litefarm" column="task_id" foreignKey="animal_movement_task_purpose_relationship_task_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="task"/>
          </column>
@@ -328,7 +342,7 @@
             <column ascending="true" name="id"/>
          </index>
       </table>
-      <table catalog="pg-litefarm" name="animal_use_relationship" numRows="161" remarks="" schema="public" type="TABLE">
+      <table catalog="pg-litefarm" name="animal_use_relationship" numRows="313" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="animal_id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
             <parent catalog="pg-litefarm" column="id" foreignKey="animal_use_relationship_animal_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="animal"/>
          </column>
@@ -343,7 +357,7 @@
             <column ascending="true" name="use_id"/>
          </index>
       </table>
-      <table catalog="pg-litefarm" name="area" numRows="21930" remarks="" schema="public" type="TABLE">
+      <table catalog="pg-litefarm" name="area" numRows="24101" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="figure_id" nullable="false" remarks="" size="2147483647" type="uuid" typeCode="1111">
             <parent catalog="pg-litefarm" column="figure_id" foreignKey="area_figure_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="figure"/>
          </column>
@@ -357,7 +371,7 @@
             <column ascending="true" name="figure_id"/>
          </index>
       </table>
-      <table catalog="pg-litefarm" name="barn" numRows="1239" remarks="" schema="public" type="TABLE">
+      <table catalog="pg-litefarm" name="barn" numRows="1411" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="location_id" nullable="false" remarks="" size="2147483647" type="uuid" typeCode="1111">
             <parent catalog="pg-litefarm" column="location_id" foreignKey="barn_location_id_foreign" implied="false" onDeleteCascade="true" schema="public" table="location"/>
          </column>
@@ -413,7 +427,7 @@
             <column ascending="true" name="location_id"/>
          </index>
       </table>
-      <table catalog="pg-litefarm" name="ceremonial_area" numRows="256" remarks="" schema="public" type="TABLE">
+      <table catalog="pg-litefarm" name="ceremonial_area" numRows="332" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="location_id" nullable="false" remarks="" size="2147483647" type="uuid" typeCode="1111">
             <parent catalog="pg-litefarm" column="location_id" foreignKey="ceremonial_area_location_id_foreign" implied="false" onDeleteCascade="true" schema="public" table="location"/>
          </column>
@@ -463,7 +477,7 @@
             <column ascending="true" name="certifier_id"/>
          </index>
       </table>
-      <table catalog="pg-litefarm" name="cleaning_task" numRows="496" remarks="" schema="public" type="TABLE">
+      <table catalog="pg-litefarm" name="cleaning_task" numRows="594" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="task_id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
             <parent catalog="pg-litefarm" column="task_id" foreignKey="cleaning_task_task_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="task"/>
          </column>
@@ -483,7 +497,7 @@
             <column ascending="true" name="task_id"/>
          </index>
       </table>
-      <table catalog="pg-litefarm" name="container_method" numRows="3727" remarks="" schema="public" type="TABLE">
+      <table catalog="pg-litefarm" name="container_method" numRows="4149" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="planting_management_plan_id" nullable="false" remarks="" size="2147483647" type="uuid" typeCode="1111">
             <parent catalog="pg-litefarm" column="planting_management_plan_id" foreignKey="container_method_planting_management_plan_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="planting_management_plan"/>
          </column>
@@ -518,7 +532,7 @@
             <column ascending="true" name="id"/>
          </index>
       </table>
-      <table catalog="pg-litefarm" name="crop" numRows="2919" remarks="" schema="public" type="TABLE">
+      <table catalog="pg-litefarm" name="crop" numRows="3139" remarks="" schema="public" type="TABLE">
          <column autoUpdated="true" defaultValue="nextval('crop_crop_id_seq'::regclass)" digits="0" id="0" name="crop_id" nullable="false" remarks="" size="10" type="serial" typeCode="4">
             <child catalog="pg-litefarm" column="crop_id" foreignKey="crop_variety_crop_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="crop_variety"/>
             <child catalog="pg-litefarm" column="crop_id" foreignKey="cropdisease_crop_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="cropDisease"/>
@@ -615,7 +629,7 @@
             <column ascending="true" name="farm_id"/>
          </index>
       </table>
-      <table catalog="pg-litefarm" name="crop_management_plan" numRows="19393" remarks="" schema="public" type="TABLE">
+      <table catalog="pg-litefarm" name="crop_management_plan" numRows="21805" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="management_plan_id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
             <parent catalog="pg-litefarm" column="management_plan_id" foreignKey="crop_management_plan_management_plan_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="management_plan"/>
          </column>
@@ -640,7 +654,7 @@
             <column ascending="true" name="management_plan_id"/>
          </index>
       </table>
-      <table catalog="pg-litefarm" name="crop_variety" numRows="18132" remarks="" schema="public" type="TABLE">
+      <table catalog="pg-litefarm" name="crop_variety" numRows="19893" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" defaultValue="uuid_generate_v1()" digits="0" id="0" name="crop_variety_id" nullable="false" remarks="" size="2147483647" type="uuid" typeCode="1111">
             <child catalog="pg-litefarm" column="crop_variety_id" foreignKey="crop_variety_sale_crop_variety_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="crop_variety_sale"/>
             <child catalog="pg-litefarm" column="crop_variety_id" foreignKey="management_plan_crop_variety_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="management_plan"/>
@@ -714,7 +728,7 @@
             <column ascending="true" name="crop_variety_id"/>
          </index>
       </table>
-      <table catalog="pg-litefarm" name="crop_variety_sale" numRows="4402" remarks="" schema="public" type="TABLE">
+      <table catalog="pg-litefarm" name="crop_variety_sale" numRows="5288" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="sale_id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
             <parent catalog="pg-litefarm" column="sale_id" foreignKey="crop_variety_sale_sale_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="sale"/>
          </column>
@@ -745,7 +759,7 @@
             <column ascending="true" name="crop_id"/>
          </index>
       </table>
-      <table catalog="pg-litefarm" name="custom_animal_breed" numRows="107" remarks="" schema="public" type="TABLE">
+      <table catalog="pg-litefarm" name="custom_animal_breed" numRows="168" remarks="" schema="public" type="TABLE">
          <column autoUpdated="true" defaultValue="nextval('custom_animal_breed_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial" typeCode="4">
             <child catalog="pg-litefarm" column="custom_breed_id" foreignKey="animal_custom_breed_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="animal"/>
             <child catalog="pg-litefarm" column="custom_breed_id" foreignKey="animal_batch_custom_breed_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="animal_batch"/>
@@ -774,7 +788,7 @@
             <column ascending="true" name="id"/>
          </index>
       </table>
-      <table catalog="pg-litefarm" name="custom_animal_type" numRows="51" remarks="" schema="public" type="TABLE">
+      <table catalog="pg-litefarm" name="custom_animal_type" numRows="107" remarks="" schema="public" type="TABLE">
          <column autoUpdated="true" defaultValue="nextval('custom_animal_type_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial" typeCode="4">
             <child catalog="pg-litefarm" column="custom_type_id" foreignKey="animal_custom_type_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="animal"/>
             <child catalog="pg-litefarm" column="custom_type_id" foreignKey="animal_batch_custom_type_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="animal_batch"/>
@@ -864,9 +878,10 @@
             <column ascending="true" name="disease_id"/>
          </index>
       </table>
-      <table catalog="pg-litefarm" name="document" numRows="502" remarks="" schema="public" type="TABLE">
+      <table catalog="pg-litefarm" name="document" numRows="590" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" defaultValue="uuid_generate_v1()" digits="0" id="0" name="document_id" nullable="false" remarks="" size="2147483647" type="uuid" typeCode="1111">
             <child catalog="pg-litefarm" column="document_id" foreignKey="file_document_id_foreign" implied="false" onDeleteCascade="true" schema="public" table="file"/>
+            <child catalog="pg-litefarm" column="document_id" foreignKey="task_document_document_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="task_document"/>
          </column>
          <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="name" nullable="false" remarks="" size="255" type="varchar" typeCode="12"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="valid_until" nullable="true" remarks="" size="13" type="date" typeCode="91"/>
@@ -892,7 +907,7 @@
             <column ascending="true" name="document_id"/>
          </index>
       </table>
-      <table catalog="pg-litefarm" name="emailToken" numRows="2881" remarks="" schema="public" type="TABLE">
+      <table catalog="pg-litefarm" name="emailToken" numRows="3082" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="user_id" nullable="false" remarks="" size="255" type="varchar" typeCode="12">
             <parent catalog="pg-litefarm" column="user_id" foreignKey="emailtoken_user_id_foreign" implied="false" onDeleteCascade="true" schema="public" table="users"/>
          </column>
@@ -912,7 +927,7 @@
             <column ascending="true" name="farm_id"/>
          </index>
       </table>
-      <table catalog="pg-litefarm" name="farm" numRows="7448" remarks="" schema="public" type="TABLE">
+      <table catalog="pg-litefarm" name="farm" numRows="8556" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" defaultValue="uuid_generate_v1()" digits="0" id="0" name="farm_id" nullable="false" remarks="" size="2147483647" type="uuid" typeCode="1111">
             <child catalog="pg-litefarm" column="farm_id" foreignKey="animal_farm_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="animal"/>
             <child catalog="pg-litefarm" column="farm_id" foreignKey="animal_batch_farm_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="animal_batch"/>
@@ -924,7 +939,7 @@
             <child catalog="pg-litefarm" column="farm_id" foreignKey="disease_farm_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="disease"/>
             <child catalog="pg-litefarm" column="farm_id" foreignKey="document_farm_id_foreign" implied="false" onDeleteCascade="true" schema="public" table="document"/>
             <child catalog="pg-litefarm" column="farm_id" foreignKey="emailtoken_farm_id_foreign" implied="false" onDeleteCascade="true" schema="public" table="emailToken"/>
-            <child catalog="pg-litefarm" column="farm_id" foreignKey="farm_external_integration_farm_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="farm_external_integration"/>
+            <child catalog="pg-litefarm" column="farm_id" foreignKey="farm_external_integration_farm_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="farm_addon"/>
             <child catalog="pg-litefarm" column="farm_id" foreignKey="farmdataschedule_farm_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="farmDataSchedule"/>
             <child catalog="pg-litefarm" column="farm_id" foreignKey="farmexpense_farm_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="farmExpense"/>
             <child catalog="pg-litefarm" column="farm_id" foreignKey="farmexpensetype_farm_id_foreign" implied="false" onDeleteCascade="true" schema="public" table="farmExpenseType"/>
@@ -980,23 +995,35 @@
             <column ascending="true" name="farm_id"/>
          </index>
       </table>
-      <table catalog="pg-litefarm" name="farm_external_integration" numRows="0" remarks="" schema="public" type="TABLE">
+      <table catalog="pg-litefarm" name="farm_addon" numRows="2" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="farm_id" nullable="false" remarks="" size="2147483647" type="uuid" typeCode="1111">
             <parent catalog="pg-litefarm" column="farm_id" foreignKey="farm_external_integration_farm_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="farm"/>
          </column>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="partner_id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
-            <parent catalog="pg-litefarm" column="partner_id" foreignKey="farm_external_integration_partner_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="integrating_partner"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="addon_partner_id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <parent catalog="pg-litefarm" column="id" foreignKey="farm_external_integration_partner_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="addon_partner"/>
          </column>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="organization_uuid" nullable="true" remarks="" size="2147483647" type="uuid" typeCode="1111"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="webhook_id" nullable="true" remarks="" size="10" type="int4" typeCode="4"/>
-         <primaryKey column="farm_id" sequenceNumberInPK="1"/>
-         <primaryKey column="partner_id" sequenceNumberInPK="2"/>
-         <index name="farm_external_integration_pkey" unique="true">
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="org_uuid" nullable="true" remarks="" size="2147483647" type="uuid" typeCode="1111"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="org_pk" nullable="true" remarks="" size="10" type="int4" typeCode="4"/>
+         <column autoUpdated="true" defaultValue="nextval('farm_addon_id_seq'::regclass)" digits="0" id="4" name="id" nullable="false" remarks="" size="10" type="serial" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="false" digits="0" id="5" name="deleted" nullable="false" remarks="" size="1" type="bool" typeCode="-7"/>
+         <column autoUpdated="false" defaultValue="'1'::character varying" digits="0" id="6" name="created_by_user_id" nullable="false" remarks="" size="255" type="varchar" typeCode="12">
+            <parent catalog="pg-litefarm" column="user_id" foreignKey="farm_addon_created_by_user_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="users"/>
+         </column>
+         <column autoUpdated="false" defaultValue="'1'::character varying" digits="0" id="7" name="updated_by_user_id" nullable="false" remarks="" size="255" type="varchar" typeCode="12">
+            <parent catalog="pg-litefarm" column="user_id" foreignKey="farm_addon_updated_by_user_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="users"/>
+         </column>
+         <column autoUpdated="false" defaultValue="'1999-12-31 16:00:00-08'::timestamp with time zone" digits="6" id="8" name="created_at" nullable="false" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="'1999-12-31 16:00:00-08'::timestamp with time zone" digits="6" id="9" name="updated_at" nullable="false" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="farm_addon_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+         <index name="farm_addon_uniqueness_composite" unique="true">
             <column ascending="true" name="farm_id"/>
-            <column ascending="true" name="partner_id"/>
+            <column ascending="true" name="addon_partner_id"/>
          </index>
       </table>
-      <table catalog="pg-litefarm" name="farm_site_boundary" numRows="2390" remarks="" schema="public" type="TABLE">
+      <table catalog="pg-litefarm" name="farm_site_boundary" numRows="2762" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="location_id" nullable="false" remarks="" size="2147483647" type="uuid" typeCode="1111">
             <parent catalog="pg-litefarm" column="location_id" foreignKey="farm_site_boundary_location_id_foreign" implied="false" onDeleteCascade="true" schema="public" table="location"/>
          </column>
@@ -1021,7 +1048,7 @@
             <column ascending="true" name="request_number"/>
          </index>
       </table>
-      <table catalog="pg-litefarm" name="farmExpense" numRows="5776" remarks="" schema="public" type="TABLE">
+      <table catalog="pg-litefarm" name="farmExpense" numRows="8156" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="farm_id" nullable="true" remarks="" size="2147483647" type="uuid" typeCode="1111">
             <parent catalog="pg-litefarm" column="farm_id" foreignKey="farmexpense_farm_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="farm"/>
          </column>
@@ -1047,7 +1074,7 @@
             <column ascending="true" name="farm_expense_id"/>
          </index>
       </table>
-      <table catalog="pg-litefarm" name="farmExpenseType" numRows="194" remarks="" schema="public" type="TABLE">
+      <table catalog="pg-litefarm" name="farmExpenseType" numRows="297" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="expense_name" nullable="true" remarks="" size="255" type="varchar" typeCode="12"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="farm_id" nullable="true" remarks="" size="2147483647" type="uuid" typeCode="1111">
             <parent catalog="pg-litefarm" column="farm_id" foreignKey="farmexpensetype_farm_id_foreign" implied="false" onDeleteCascade="true" schema="public" table="farm"/>
@@ -1072,7 +1099,7 @@
             <column ascending="true" name="expense_type_id"/>
          </index>
       </table>
-      <table catalog="pg-litefarm" name="fence" numRows="705" remarks="" schema="public" type="TABLE">
+      <table catalog="pg-litefarm" name="fence" numRows="825" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="location_id" nullable="false" remarks="" size="2147483647" type="uuid" typeCode="1111">
             <parent catalog="pg-litefarm" column="location_id" foreignKey="fence_location_id_foreign" implied="false" onDeleteCascade="true" schema="public" table="location"/>
          </column>
@@ -1109,7 +1136,7 @@
             <column ascending="true" name="fertilizer_id"/>
          </index>
       </table>
-      <table catalog="pg-litefarm" name="field" numRows="9062" remarks="" schema="public" type="TABLE">
+      <table catalog="pg-litefarm" name="field" numRows="10740" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" defaultValue="uuid_generate_v1()" digits="0" id="0" name="location_id" nullable="false" remarks="" size="2147483647" type="uuid" typeCode="1111">
             <child catalog="pg-litefarm" column="location_id" foreignKey="nitrogenbalance_field_id_foreign" implied="false" onDeleteCascade="true" schema="public" table="nitrogenBalance"/>
             <child catalog="pg-litefarm" column="location_id" foreignKey="waterbalance_field_id_foreign" implied="false" onDeleteCascade="true" schema="public" table="waterBalance"/>
@@ -1125,7 +1152,7 @@
             <column ascending="true" name="location_id"/>
          </index>
       </table>
-      <table catalog="pg-litefarm" name="field_work_task" numRows="4526" remarks="" schema="public" type="TABLE">
+      <table catalog="pg-litefarm" name="field_work_task" numRows="5069" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="task_id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
             <parent catalog="pg-litefarm" column="task_id" foreignKey="fieldworklog_activity_id_foreign" implied="false" onDeleteCascade="true" schema="public" table="task"/>
          </column>
@@ -1173,7 +1200,7 @@
             <column ascending="true" name="farm_id"/>
          </index>
       </table>
-      <table catalog="pg-litefarm" name="figure" numRows="25407" remarks="" schema="public" type="TABLE">
+      <table catalog="pg-litefarm" name="figure" numRows="28686" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" defaultValue="uuid_generate_v1()" digits="0" id="0" name="figure_id" nullable="false" remarks="" size="2147483647" type="uuid" typeCode="1111">
             <child catalog="pg-litefarm" column="figure_id" foreignKey="area_figure_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="area"/>
             <child catalog="pg-litefarm" column="figure_id" foreignKey="line_figure_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="line"/>
@@ -1188,7 +1215,7 @@
             <column ascending="true" name="figure_id"/>
          </index>
       </table>
-      <table catalog="pg-litefarm" name="file" numRows="522" remarks="" schema="public" type="TABLE">
+      <table catalog="pg-litefarm" name="file" numRows="621" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" defaultValue="uuid_generate_v1()" digits="0" id="0" name="file_id" nullable="false" remarks="" size="2147483647" type="uuid" typeCode="1111"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="document_id" nullable="true" remarks="" size="2147483647" type="uuid" typeCode="1111">
             <parent catalog="pg-litefarm" column="document_id" foreignKey="file_document_id_foreign" implied="false" onDeleteCascade="true" schema="public" table="document"/>
@@ -1201,7 +1228,7 @@
             <column ascending="true" name="file_id"/>
          </index>
       </table>
-      <table catalog="pg-litefarm" name="finance_report" numRows="168" remarks="" schema="public" type="TABLE">
+      <table catalog="pg-litefarm" name="finance_report" numRows="235" remarks="" schema="public" type="TABLE">
          <column autoUpdated="true" defaultValue="nextval('finance_report_finance_report_id_seq'::regclass)" digits="0" id="0" name="finance_report_id" nullable="false" remarks="" size="10" type="serial" typeCode="4"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="farm_id" nullable="false" remarks="" size="2147483647" type="uuid" typeCode="1111">
             <parent catalog="pg-litefarm" column="farm_id" foreignKey="finance_report_farm_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="farm"/>
@@ -1221,7 +1248,7 @@
             <column ascending="true" name="finance_report_id"/>
          </index>
       </table>
-      <table catalog="pg-litefarm" name="garden" numRows="3627" remarks="" schema="public" type="TABLE">
+      <table catalog="pg-litefarm" name="garden" numRows="4023" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="location_id" nullable="false" remarks="" size="2147483647" type="uuid" typeCode="1111">
             <parent catalog="pg-litefarm" column="location_id" foreignKey="garden_location_id_foreign" implied="false" onDeleteCascade="true" schema="public" table="location"/>
          </column>
@@ -1235,7 +1262,7 @@
             <column ascending="true" name="location_id"/>
          </index>
       </table>
-      <table catalog="pg-litefarm" name="gate" numRows="746" remarks="" schema="public" type="TABLE">
+      <table catalog="pg-litefarm" name="gate" numRows="870" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="location_id" nullable="false" remarks="" size="2147483647" type="uuid" typeCode="1111">
             <parent catalog="pg-litefarm" column="location_id" foreignKey="gate_location_id_foreign" implied="false" onDeleteCascade="true" schema="public" table="location"/>
          </column>
@@ -1247,7 +1274,7 @@
             <column ascending="true" name="location_id"/>
          </index>
       </table>
-      <table catalog="pg-litefarm" name="greenhouse" numRows="1355" remarks="" schema="public" type="TABLE">
+      <table catalog="pg-litefarm" name="greenhouse" numRows="1536" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="location_id" nullable="false" remarks="" size="2147483647" type="uuid" typeCode="1111">
             <parent catalog="pg-litefarm" column="location_id" foreignKey="greenhouse_location_id_foreign" implied="false" onDeleteCascade="true" schema="public" table="location"/>
          </column>
@@ -1261,7 +1288,7 @@
             <column ascending="true" name="location_id"/>
          </index>
       </table>
-      <table catalog="pg-litefarm" name="harvest_task" numRows="22294" remarks="" schema="public" type="TABLE">
+      <table catalog="pg-litefarm" name="harvest_task" numRows="25374" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="task_id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
             <child catalog="pg-litefarm" column="task_id" foreignKey="harvestuse_activity_id_foreign" implied="false" onDeleteCascade="true" schema="public" table="harvest_use"/>
             <parent catalog="pg-litefarm" column="task_id" foreignKey="harvestlog_activity_id_foreign" implied="false" onDeleteCascade="true" schema="public" table="task"/>
@@ -1276,7 +1303,7 @@
             <column ascending="true" name="task_id"/>
          </index>
       </table>
-      <table catalog="pg-litefarm" name="harvest_use" numRows="9689" remarks="" schema="public" type="TABLE">
+      <table catalog="pg-litefarm" name="harvest_use" numRows="11829" remarks="" schema="public" type="TABLE">
          <column autoUpdated="true" defaultValue="nextval('&quot;harvestUse_harvest_use_id_seq&quot;'::regclass)" digits="0" id="0" name="harvest_use_id" nullable="false" remarks="" size="10" type="serial" typeCode="4"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="task_id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
             <parent catalog="pg-litefarm" column="task_id" foreignKey="harvestuse_activity_id_foreign" implied="false" onDeleteCascade="true" schema="public" table="harvest_task"/>
@@ -1320,23 +1347,7 @@
             <column ascending="true" name="hs_code_id"/>
          </index>
       </table>
-      <table catalog="pg-litefarm" name="integrating_partner" numRows="0" remarks="" schema="public" type="TABLE">
-         <column autoUpdated="true" defaultValue="nextval('integrating_partner_partner_id_seq'::regclass)" digits="0" id="0" name="partner_id" nullable="false" remarks="" size="10" type="serial" typeCode="4">
-            <child catalog="pg-litefarm" column="partner_id" foreignKey="farm_external_integration_partner_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="farm_external_integration"/>
-            <child catalog="pg-litefarm" column="partner_id" foreignKey="partner_reading_type_partner_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="partner_reading_type"/>
-            <child catalog="pg-litefarm" column="partner_id" foreignKey="sensor_partner_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="sensor"/>
-         </column>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="partner_name" nullable="false" remarks="" size="255" type="varchar" typeCode="12"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="access_token" nullable="true" remarks="" size="255" type="varchar" typeCode="12"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="refresh_token" nullable="true" remarks="" size="255" type="varchar" typeCode="12"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="root_url" nullable="true" remarks="" size="255" type="varchar" typeCode="12"/>
-         <column autoUpdated="false" defaultValue="false" digits="0" id="5" name="deactivated" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
-         <primaryKey column="partner_id" sequenceNumberInPK="1"/>
-         <index name="integrating_partner_pkey" unique="true">
-            <column ascending="true" name="partner_id"/>
-         </index>
-      </table>
-      <table catalog="pg-litefarm" name="irrigation_task" numRows="585" remarks="" schema="public" type="TABLE">
+      <table catalog="pg-litefarm" name="irrigation_task" numRows="692" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="task_id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
             <parent catalog="pg-litefarm" column="task_id" foreignKey="irrigationlog_activity_id_foreign" implied="false" onDeleteCascade="true" schema="public" table="task"/>
          </column>
@@ -1361,6 +1372,7 @@
          <column autoUpdated="false" defaultValue="false" digits="0" id="15" name="default_location_application_depth" nullable="false" remarks="" size="1" type="bool" typeCode="-7"/>
          <column autoUpdated="false" defaultValue="false" digits="0" id="16" name="default_irrigation_task_type_location" nullable="false" remarks="" size="1" type="bool" typeCode="-7"/>
          <column autoUpdated="false" defaultValue="false" digits="0" id="17" name="default_irrigation_task_type_measurement" nullable="false" remarks="" size="1" type="bool" typeCode="-7"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="18" name="irrigation_prescription_external_id" nullable="true" remarks="" size="10" type="int4" typeCode="4"/>
          <primaryKey column="task_id" sequenceNumberInPK="1"/>
          <index name="irrigationLog_pkey" unique="true">
             <column ascending="true" name="task_id"/>
@@ -1404,7 +1416,7 @@
       <table catalog="pg-litefarm" name="knex_migrations_lock" numRows="1" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="is_locked" nullable="true" remarks="" size="10" type="int4" typeCode="4"/>
       </table>
-      <table catalog="pg-litefarm" name="line" numRows="1942" remarks="" schema="public" type="TABLE">
+      <table catalog="pg-litefarm" name="line" numRows="2184" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="figure_id" nullable="false" remarks="" size="2147483647" type="uuid" typeCode="1111">
             <parent catalog="pg-litefarm" column="figure_id" foreignKey="line_figure_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="figure"/>
          </column>
@@ -1420,7 +1432,7 @@
             <column ascending="true" name="figure_id"/>
          </index>
       </table>
-      <table catalog="pg-litefarm" name="location" numRows="25459" remarks="" schema="public" type="TABLE">
+      <table catalog="pg-litefarm" name="location" numRows="29620" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" defaultValue="uuid_generate_v1()" digits="0" id="0" name="location_id" nullable="false" remarks="" size="2147483647" type="uuid" typeCode="1111">
             <child catalog="pg-litefarm" column="location_id" foreignKey="animal_location_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="animal"/>
             <child catalog="pg-litefarm" column="location_id" foreignKey="animal_batch_location_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="animal_batch"/>
@@ -1444,8 +1456,8 @@
             <child catalog="pg-litefarm" column="location_id" foreignKey="pin_location_id_foreign" implied="false" onDeleteCascade="true" schema="public" table="pin"/>
             <child catalog="pg-litefarm" column="location_id" foreignKey="planting_management_plan_location_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="planting_management_plan"/>
             <child catalog="pg-litefarm" column="location_id" foreignKey="residence_location_id_foreign" implied="false" onDeleteCascade="true" schema="public" table="residence"/>
-            <child catalog="pg-litefarm" column="location_id" foreignKey="sensor_location_id_foreign" implied="false" onDeleteCascade="true" schema="public" table="sensor"/>
             <child catalog="pg-litefarm" column="location_id" foreignKey="shifttask_field_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="shiftTask"/>
+            <child catalog="pg-litefarm" column="location_id" foreignKey="soil_sample_location_location_id_foreign" implied="false" onDeleteCascade="true" schema="public" table="soil_sample_location"/>
             <child catalog="pg-litefarm" column="location_id" foreignKey="ground_water_location_id_foreign" implied="false" onDeleteCascade="true" schema="public" table="surface_water"/>
             <child catalog="pg-litefarm" column="location_id" foreignKey="water_valve_location_id_foreign" implied="false" onDeleteCascade="true" schema="public" table="water_valve"/>
             <child catalog="pg-litefarm" column="location_id" foreignKey="creek_location_id_foreign" implied="false" onDeleteCascade="true" schema="public" table="watercourse"/>
@@ -1494,7 +1506,7 @@
             <column ascending="true" name="location_id"/>
          </index>
       </table>
-      <table catalog="pg-litefarm" name="location_tasks" numRows="37897" remarks="" schema="public" type="TABLE">
+      <table catalog="pg-litefarm" name="location_tasks" numRows="41737" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="task_id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
             <parent catalog="pg-litefarm" column="task_id" foreignKey="activityfields_activity_id_foreign" implied="false" onDeleteCascade="true" schema="public" table="task"/>
          </column>
@@ -1518,7 +1530,7 @@
             <column ascending="true" name="task_id"/>
          </index>
       </table>
-      <table catalog="pg-litefarm" name="management_plan" numRows="19647" remarks="" schema="public" type="TABLE">
+      <table catalog="pg-litefarm" name="management_plan" numRows="22000" remarks="" schema="public" type="TABLE">
          <column autoUpdated="true" defaultValue="nextval('&quot;fieldCrop_field_crop_id_seq&quot;'::regclass)" digits="0" id="0" name="management_plan_id" nullable="false" remarks="" size="10" type="serial" typeCode="4">
             <child catalog="pg-litefarm" column="management_plan_id" foreignKey="crop_management_plan_management_plan_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="crop_management_plan"/>
             <child catalog="pg-litefarm" column="management_plan_id" foreignKey="planting_management_plan_management_plan_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="planting_management_plan"/>
@@ -1553,7 +1565,7 @@
             <column ascending="true" name="management_plan_id"/>
          </index>
       </table>
-      <table catalog="pg-litefarm" name="management_plan_group" numRows="1172" remarks="" schema="public" type="TABLE">
+      <table catalog="pg-litefarm" name="management_plan_group" numRows="1255" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" defaultValue="uuid_generate_v4()" digits="0" id="0" name="management_plan_group_id" nullable="false" remarks="" size="2147483647" type="uuid" typeCode="1111">
             <child catalog="pg-litefarm" column="management_plan_group_id" foreignKey="management_plan_management_plan_group_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="management_plan"/>
          </column>
@@ -1573,7 +1585,7 @@
             <column ascending="true" name="management_plan_group_id"/>
          </index>
       </table>
-      <table catalog="pg-litefarm" name="management_tasks" numRows="35935" remarks="" schema="public" type="TABLE">
+      <table catalog="pg-litefarm" name="management_tasks" numRows="39708" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="task_id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
             <parent catalog="pg-litefarm" column="task_id" foreignKey="activitycrops_activity_id_foreign" implied="false" onDeleteCascade="true" schema="public" table="task"/>
          </column>
@@ -1587,7 +1599,18 @@
             <column ascending="true" name="task_id"/>
          </index>
       </table>
-      <table catalog="pg-litefarm" name="natural_area" numRows="1218" remarks="" schema="public" type="TABLE">
+      <table catalog="pg-litefarm" name="migration_deletion_logs" numRows="314" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('migration_deletion_logs_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="migration_name" nullable="false" remarks="" size="255" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="table_name" nullable="false" remarks="" size="255" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="data" nullable="false" remarks="" size="2147483647" type="jsonb" typeCode="1111"/>
+         <column autoUpdated="false" defaultValue="CURRENT_TIMESTAMP" digits="6" id="4" name="created_at" nullable="false" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="migration_deletion_logs_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table catalog="pg-litefarm" name="natural_area" numRows="1260" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="location_id" nullable="false" remarks="" size="2147483647" type="uuid" typeCode="1111">
             <parent catalog="pg-litefarm" column="location_id" foreignKey="natural_area_location_id_foreign" implied="false" onDeleteCascade="true" schema="public" table="location"/>
          </column>
@@ -1621,7 +1644,7 @@
             <column ascending="true" name="nitrogen_schedule_id"/>
          </index>
       </table>
-      <table catalog="pg-litefarm" name="nomination" numRows="579" remarks="" schema="public" type="TABLE">
+      <table catalog="pg-litefarm" name="nomination" numRows="688" remarks="" schema="public" type="TABLE">
          <column autoUpdated="true" defaultValue="nextval('nomination_nomination_id_seq'::regclass)" digits="0" id="0" name="nomination_id" nullable="false" remarks="" size="10" type="serial" typeCode="4">
             <child catalog="pg-litefarm" column="nomination_id" foreignKey="nomination_crop_nomination_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="nomination_crop"/>
             <child catalog="pg-litefarm" column="nomination_id" foreignKey="nomination_status_nomination_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="nomination_status"/>
@@ -1646,7 +1669,7 @@
             <column ascending="true" name="nomination_id"/>
          </index>
       </table>
-      <table catalog="pg-litefarm" name="nomination_crop" numRows="579" remarks="" schema="public" type="TABLE">
+      <table catalog="pg-litefarm" name="nomination_crop" numRows="688" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="nomination_id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
             <parent catalog="pg-litefarm" column="nomination_id" foreignKey="nomination_crop_nomination_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="nomination"/>
          </column>
@@ -1660,7 +1683,7 @@
             <column ascending="true" name="crop_id"/>
          </index>
       </table>
-      <table catalog="pg-litefarm" name="nomination_status" numRows="579" remarks="" schema="public" type="TABLE">
+      <table catalog="pg-litefarm" name="nomination_status" numRows="688" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" defaultValue="uuid_generate_v1()" digits="0" id="0" name="status_id" nullable="false" remarks="" size="2147483647" type="uuid" typeCode="1111"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="nomination_id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
             <parent catalog="pg-litefarm" column="nomination_id" foreignKey="nomination_status_nomination_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="nomination"/>
@@ -1728,7 +1751,7 @@
             <column ascending="true" name="type_group"/>
          </index>
       </table>
-      <table catalog="pg-litefarm" name="notification" numRows="52208" remarks="" schema="public" type="TABLE">
+      <table catalog="pg-litefarm" name="notification" numRows="63730" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" defaultValue="uuid_generate_v4()" digits="0" id="0" name="notification_id" nullable="false" remarks="" size="2147483647" type="uuid" typeCode="1111">
             <child catalog="pg-litefarm" column="notification_id" foreignKey="notification_user_notification_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="notification_user"/>
          </column>
@@ -1754,7 +1777,7 @@
             <column ascending="true" name="notification_id"/>
          </index>
       </table>
-      <table catalog="pg-litefarm" name="notification_user" numRows="63663" remarks="" schema="public" type="TABLE">
+      <table catalog="pg-litefarm" name="notification_user" numRows="74350" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="notification_id" nullable="false" remarks="" size="2147483647" type="uuid" typeCode="1111">
             <parent catalog="pg-litefarm" column="notification_id" foreignKey="notification_user_notification_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="notification"/>
          </column>
@@ -1779,7 +1802,7 @@
             <column ascending="true" name="user_id"/>
          </index>
       </table>
-      <table catalog="pg-litefarm" name="organic_history" numRows="14747" remarks="" schema="public" type="TABLE">
+      <table catalog="pg-litefarm" name="organic_history" numRows="16249" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" defaultValue="uuid_generate_v1()" digits="0" id="0" name="organic_history_id" nullable="false" remarks="" size="2147483647" type="uuid" typeCode="1111"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="location_id" nullable="false" remarks="" size="2147483647" type="uuid" typeCode="1111">
             <parent catalog="pg-litefarm" column="location_id" foreignKey="organic_history_location_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="location"/>
@@ -1804,19 +1827,19 @@
             <column ascending="true" name="effective_date"/>
          </index>
       </table>
-      <table catalog="pg-litefarm" name="organicCertifierSurvey" numRows="7294" remarks="" schema="public" type="TABLE">
+      <table catalog="pg-litefarm" name="organicCertifierSurvey" numRows="8155" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" defaultValue="uuid_generate_v1()" digits="0" id="0" name="survey_id" nullable="false" remarks="" size="2147483647" type="uuid" typeCode="1111"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="farm_id" nullable="true" remarks="" size="2147483647" type="uuid" typeCode="1111">
-            <parent catalog="pg-litefarm" column="farm_id" foreignKey="organiccertifiersurvey_farm_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="farm"/>
             <parent catalog="pg-litefarm" column="farm_id" foreignKey="organiccertifiersurvey_farm_id_updated_by_user_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="userFarm"/>
+            <parent catalog="pg-litefarm" column="farm_id" foreignKey="organiccertifiersurvey_farm_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="farm"/>
          </column>
          <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="created_by_user_id" nullable="true" remarks="" size="255" type="varchar" typeCode="12">
-            <parent catalog="pg-litefarm" column="user_id" foreignKey="organiccertifiersurvey_farm_id_created_by_user_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="userFarm"/>
             <parent catalog="pg-litefarm" column="user_id" foreignKey="organiccertifiersurvey_created_by_user_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="users"/>
+            <parent catalog="pg-litefarm" column="user_id" foreignKey="organiccertifiersurvey_farm_id_created_by_user_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="userFarm"/>
          </column>
          <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="updated_by_user_id" nullable="true" remarks="" size="255" type="varchar" typeCode="12">
-            <parent catalog="pg-litefarm" column="user_id" foreignKey="organiccertifiersurvey_farm_id_updated_by_user_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="userFarm"/>
             <parent catalog="pg-litefarm" column="user_id" foreignKey="organiccertifiersurvey_updated_by_user_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="users"/>
+            <parent catalog="pg-litefarm" column="user_id" foreignKey="organiccertifiersurvey_farm_id_updated_by_user_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="userFarm"/>
          </column>
          <column autoUpdated="false" defaultValue="null" digits="6" id="4" name="created_at" nullable="false" remarks="" size="35" type="timestamptz" typeCode="93"/>
          <column autoUpdated="false" defaultValue="null" digits="6" id="5" name="updated_at" nullable="false" remarks="" size="35" type="timestamptz" typeCode="93"/>
@@ -1838,21 +1861,7 @@
             <column ascending="true" name="farm_id"/>
          </index>
       </table>
-      <table catalog="pg-litefarm" name="partner_reading_type" numRows="0" remarks="" schema="public" type="TABLE">
-         <column autoUpdated="false" defaultValue="uuid_generate_v1()" digits="0" id="0" name="partner_reading_type_id" nullable="false" remarks="" size="2147483647" type="uuid" typeCode="1111">
-            <child catalog="pg-litefarm" column="partner_reading_type_id" foreignKey="sensor_reading_type_partner_reading_type_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="sensor_reading_type"/>
-         </column>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="partner_id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
-            <parent catalog="pg-litefarm" column="partner_id" foreignKey="partner_reading_type_partner_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="integrating_partner"/>
-         </column>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="raw_value" nullable="true" remarks="" size="10" type="int4" typeCode="4"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="readable_value" nullable="true" remarks="" size="255" type="varchar" typeCode="12"/>
-         <primaryKey column="partner_reading_type_id" sequenceNumberInPK="1"/>
-         <index name="partner_reading_type_pkey" unique="true">
-            <column ascending="true" name="partner_reading_type_id"/>
-         </index>
-      </table>
-      <table catalog="pg-litefarm" name="password" numRows="2581" remarks="" schema="public" type="TABLE">
+      <table catalog="pg-litefarm" name="password" numRows="2842" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="user_id" nullable="false" remarks="" size="255" type="varchar" typeCode="12">
             <parent catalog="pg-litefarm" column="user_id" foreignKey="password_user_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="users"/>
          </column>
@@ -1931,7 +1940,7 @@
             <column ascending="true" name="location_id"/>
          </index>
       </table>
-      <table catalog="pg-litefarm" name="plant_task" numRows="6911" remarks="" schema="public" type="TABLE">
+      <table catalog="pg-litefarm" name="plant_task" numRows="7653" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="task_id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
             <parent catalog="pg-litefarm" column="task_id" foreignKey="seedlog_activity_id_foreign" implied="false" onDeleteCascade="true" schema="public" table="task"/>
          </column>
@@ -1943,7 +1952,7 @@
             <column ascending="true" name="task_id"/>
          </index>
       </table>
-      <table catalog="pg-litefarm" name="planting_management_plan" numRows="22425" remarks="" schema="public" type="TABLE">
+      <table catalog="pg-litefarm" name="planting_management_plan" numRows="25111" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" defaultValue="uuid_generate_v4()" digits="0" id="0" name="planting_management_plan_id" nullable="false" remarks="" size="2147483647" type="uuid" typeCode="1111">
             <child catalog="pg-litefarm" column="planting_management_plan_id" foreignKey="bed_method_planting_management_plan_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="bed_method"/>
             <child catalog="pg-litefarm" column="planting_management_plan_id" foreignKey="broadcast_method_planting_management_plan_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="broadcast_method"/>
@@ -1973,7 +1982,7 @@
             <column ascending="true" name="planting_management_plan_id"/>
          </index>
       </table>
-      <table catalog="pg-litefarm" name="point" numRows="1382" remarks="" schema="public" type="TABLE">
+      <table catalog="pg-litefarm" name="point" numRows="1691" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="figure_id" nullable="false" remarks="" size="2147483647" type="uuid" typeCode="1111">
             <parent catalog="pg-litefarm" column="figure_id" foreignKey="point_figure_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="figure"/>
          </column>
@@ -1999,7 +2008,7 @@
             <column ascending="true" name="price_id"/>
          </index>
       </table>
-      <table catalog="pg-litefarm" name="product" numRows="1156" remarks="" schema="public" type="TABLE">
+      <table catalog="pg-litefarm" name="product" numRows="1232" remarks="" schema="public" type="TABLE">
          <column autoUpdated="true" defaultValue="nextval('product_product_id_seq'::regclass)" digits="0" id="0" name="product_id" nullable="false" remarks="" size="10" type="serial" typeCode="4">
             <child catalog="pg-litefarm" column="product_id" foreignKey="cleaning_task_product_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="cleaning_task"/>
             <child catalog="pg-litefarm" column="product_id" foreignKey="pest_control_task_product_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="pest_control_task"/>
@@ -2028,7 +2037,7 @@
             <column ascending="true" name="product_id"/>
          </index>
       </table>
-      <table catalog="pg-litefarm" name="release_badge" numRows="2772" remarks="" schema="public" type="TABLE">
+      <table catalog="pg-litefarm" name="release_badge" numRows="3395" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="user_id" nullable="false" remarks="" size="255" type="varchar" typeCode="12">
             <parent catalog="pg-litefarm" column="user_id" foreignKey="release_badge_user_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="users"/>
          </column>
@@ -2040,7 +2049,7 @@
             <column ascending="true" name="user_id"/>
          </index>
       </table>
-      <table catalog="pg-litefarm" name="residence" numRows="1412" remarks="" schema="public" type="TABLE">
+      <table catalog="pg-litefarm" name="residence" numRows="1604" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="location_id" nullable="false" remarks="" size="2147483647" type="uuid" typeCode="1111">
             <parent catalog="pg-litefarm" column="location_id" foreignKey="residence_location_id_foreign" implied="false" onDeleteCascade="true" schema="public" table="location"/>
          </column>
@@ -2049,7 +2058,7 @@
             <column ascending="true" name="location_id"/>
          </index>
       </table>
-      <table catalog="pg-litefarm" name="revenue_type" numRows="270" remarks="" schema="public" type="TABLE">
+      <table catalog="pg-litefarm" name="revenue_type" numRows="405" remarks="" schema="public" type="TABLE">
          <column autoUpdated="true" defaultValue="nextval('revenue_type_revenue_type_id_seq'::regclass)" digits="0" id="0" name="revenue_type_id" nullable="false" remarks="" size="10" type="serial" typeCode="4">
             <child catalog="pg-litefarm" column="revenue_type_id" foreignKey="sale_revenue_type_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="sale"/>
          </column>
@@ -2088,7 +2097,7 @@
             <column ascending="true" name="role_id"/>
          </index>
       </table>
-      <table catalog="pg-litefarm" name="rolePermissions" numRows="571" remarks="" schema="public" type="TABLE">
+      <table catalog="pg-litefarm" name="rolePermissions" numRows="593" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="role_id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
             <parent catalog="pg-litefarm" column="role_id" foreignKey="rolepermissions_role_id_foreign" implied="false" onDeleteCascade="true" schema="public" table="role"/>
          </column>
@@ -2102,7 +2111,7 @@
             <column ascending="true" name="permission_id"/>
          </index>
       </table>
-      <table catalog="pg-litefarm" name="row_method" numRows="5526" remarks="" schema="public" type="TABLE">
+      <table catalog="pg-litefarm" name="row_method" numRows="6132" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="planting_management_plan_id" nullable="false" remarks="" size="2147483647" type="uuid" typeCode="1111">
             <parent catalog="pg-litefarm" column="planting_management_plan_id" foreignKey="row_method_planting_management_plan_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="planting_management_plan"/>
          </column>
@@ -2126,7 +2135,7 @@
             <column ascending="true" name="planting_management_plan_id"/>
          </index>
       </table>
-      <table catalog="pg-litefarm" name="sale" numRows="2633" remarks="" schema="public" type="TABLE">
+      <table catalog="pg-litefarm" name="sale" numRows="3203" remarks="" schema="public" type="TABLE">
          <column autoUpdated="true" defaultValue="nextval('sale_sale_id_seq'::regclass)" digits="0" id="0" name="sale_id" nullable="false" remarks="" size="10" type="serial" typeCode="4">
             <child catalog="pg-litefarm" column="sale_id" foreignKey="crop_variety_sale_sale_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="crop_variety_sale"/>
          </column>
@@ -2171,57 +2180,6 @@
          <primaryKey column="task_id" sequenceNumberInPK="1"/>
          <index name="scoutingLog_pkey" unique="true">
             <column ascending="true" name="task_id"/>
-         </index>
-      </table>
-      <table catalog="pg-litefarm" name="sensor" numRows="44" remarks="" schema="public" type="TABLE">
-         <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="location_id" nullable="false" remarks="" size="2147483647" type="uuid" typeCode="1111">
-            <child catalog="pg-litefarm" column="location_id" foreignKey="sensor_reading_location_id_foreign" implied="false" onDeleteCascade="true" schema="public" table="sensor_reading"/>
-            <child catalog="pg-litefarm" column="location_id" foreignKey="sensor_reading_type_location_id_foreign" implied="false" onDeleteCascade="true" schema="public" table="sensor_reading_type"/>
-            <parent catalog="pg-litefarm" column="location_id" foreignKey="sensor_location_id_foreign" implied="false" onDeleteCascade="true" schema="public" table="location"/>
-         </column>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="partner_id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
-            <parent catalog="pg-litefarm" column="partner_id" foreignKey="sensor_partner_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="integrating_partner"/>
-         </column>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="external_id" nullable="false" remarks="" size="255" type="varchar" typeCode="12"/>
-         <column autoUpdated="false" defaultValue="null" digits="8" id="3" name="depth" nullable="true" remarks="" size="8" type="float4" typeCode="7"/>
-         <column autoUpdated="false" defaultValue="null" digits="8" id="4" name="elevation" nullable="true" remarks="" size="8" type="float4" typeCode="7"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="model" nullable="true" remarks="" size="255" type="varchar" typeCode="12"/>
-         <column autoUpdated="false" defaultValue="'cm'::text" digits="0" id="6" name="depth_unit" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
-         <primaryKey column="location_id" sequenceNumberInPK="1"/>
-         <index name="sensor_pkey" unique="true">
-            <column ascending="true" name="location_id"/>
-         </index>
-         <index name="sensor_location_id_unique" unique="true">
-            <column ascending="true" name="location_id"/>
-         </index>
-      </table>
-      <table catalog="pg-litefarm" name="sensor_reading" numRows="356216" remarks="" schema="public" type="TABLE">
-         <column autoUpdated="false" defaultValue="uuid_generate_v1()" digits="0" id="0" name="reading_id" nullable="false" remarks="" size="2147483647" type="uuid" typeCode="1111"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="location_id" nullable="false" remarks="" size="2147483647" type="uuid" typeCode="1111">
-            <parent catalog="pg-litefarm" column="location_id" foreignKey="sensor_reading_location_id_foreign" implied="false" onDeleteCascade="true" schema="public" table="sensor"/>
-         </column>
-         <column autoUpdated="false" defaultValue="null" digits="6" id="2" name="read_time" nullable="false" remarks="" size="35" type="timestamptz" typeCode="93"/>
-         <column autoUpdated="false" defaultValue="CURRENT_TIMESTAMP" digits="6" id="3" name="created_at" nullable="false" remarks="" size="35" type="timestamptz" typeCode="93"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="reading_type" nullable="false" remarks="" size="255" type="varchar" typeCode="12"/>
-         <column autoUpdated="false" defaultValue="null" digits="8" id="5" name="value" nullable="false" remarks="" size="8" type="float4" typeCode="7"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="6" name="unit" nullable="false" remarks="" size="255" type="varchar" typeCode="12"/>
-         <column autoUpdated="false" defaultValue="true" digits="0" id="7" name="valid" nullable="false" remarks="" size="1" type="bool" typeCode="-7"/>
-         <primaryKey column="reading_id" sequenceNumberInPK="1"/>
-         <index name="sensor_reading_pkey" unique="true">
-            <column ascending="true" name="reading_id"/>
-         </index>
-      </table>
-      <table catalog="pg-litefarm" name="sensor_reading_type" numRows="55" remarks="" schema="public" type="TABLE">
-         <column autoUpdated="false" defaultValue="uuid_generate_v1()" digits="0" id="0" name="sensor_reading_type_id" nullable="false" remarks="" size="2147483647" type="uuid" typeCode="1111"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="partner_reading_type_id" nullable="true" remarks="" size="2147483647" type="uuid" typeCode="1111">
-            <parent catalog="pg-litefarm" column="partner_reading_type_id" foreignKey="sensor_reading_type_partner_reading_type_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="partner_reading_type"/>
-         </column>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="location_id" nullable="true" remarks="" size="2147483647" type="uuid" typeCode="1111">
-            <parent catalog="pg-litefarm" column="location_id" foreignKey="sensor_reading_type_location_id_foreign" implied="false" onDeleteCascade="true" schema="public" table="sensor"/>
-         </column>
-         <primaryKey column="sensor_reading_type_id" sequenceNumberInPK="1"/>
-         <index name="sensor_reading_type_pkey" unique="true">
-            <column ascending="true" name="sensor_reading_type_id"/>
          </index>
       </table>
       <table catalog="pg-litefarm" name="shift" numRows="549" remarks="" schema="public" type="TABLE">
@@ -2276,7 +2234,7 @@
          <column autoUpdated="false" defaultValue="'1999-12-31 16:00:00-08'::timestamp with time zone" digits="6" id="9" name="created_at" nullable="false" remarks="" size="35" type="timestamptz" typeCode="93"/>
          <column autoUpdated="false" defaultValue="'1999-12-31 16:00:00-08'::timestamp with time zone" digits="6" id="10" name="updated_at" nullable="false" remarks="" size="35" type="timestamptz" typeCode="93"/>
       </table>
-      <table catalog="pg-litefarm" name="showedSpotlight" numRows="7846" remarks="" schema="public" type="TABLE">
+      <table catalog="pg-litefarm" name="showedSpotlight" numRows="8854" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="user_id" nullable="false" remarks="" size="255" type="varchar" typeCode="12">
             <parent catalog="pg-litefarm" column="user_id" foreignKey="showedspotlight_user_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="users"/>
          </column>
@@ -2312,16 +2270,14 @@
          <column autoUpdated="false" defaultValue="null" digits="6" id="30" name="planting_task_end" nullable="true" remarks="" size="35" type="timestamptz" typeCode="93"/>
          <column autoUpdated="false" defaultValue="false" digits="0" id="31" name="notification" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
          <column autoUpdated="false" defaultValue="null" digits="6" id="32" name="notification_end" nullable="true" remarks="" size="35" type="timestamptz" typeCode="93"/>
-         <column autoUpdated="false" defaultValue="false" digits="0" id="33" name="sensor_reading_chart" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
-         <column autoUpdated="false" defaultValue="null" digits="6" id="34" name="sensor_reading_chart_end" nullable="true" remarks="" size="35" type="timestamptz" typeCode="93"/>
-         <column autoUpdated="false" defaultValue="false" digits="0" id="35" name="repeat_management_plan_creation" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
-         <column autoUpdated="false" defaultValue="null" digits="6" id="36" name="repeat_management_plan_creation_end" nullable="true" remarks="" size="35" type="timestamptz" typeCode="93"/>
-         <column autoUpdated="false" defaultValue="false" digits="0" id="37" name="manage_custom_expense_type" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
-         <column autoUpdated="false" defaultValue="null" digits="6" id="38" name="manage_custom_expense_type_end" nullable="true" remarks="" size="35" type="timestamptz" typeCode="93"/>
-         <column autoUpdated="false" defaultValue="false" digits="0" id="39" name="manage_custom_revenue_type" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
-         <column autoUpdated="false" defaultValue="null" digits="6" id="40" name="manage_custom_revenue_type_end" nullable="true" remarks="" size="35" type="timestamptz" typeCode="93"/>
-         <column autoUpdated="false" defaultValue="false" digits="0" id="41" name="animals_beta" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
-         <column autoUpdated="false" defaultValue="null" digits="6" id="42" name="animals_beta_end" nullable="true" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="false" digits="0" id="33" name="repeat_management_plan_creation" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="34" name="repeat_management_plan_creation_end" nullable="true" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="false" digits="0" id="35" name="manage_custom_expense_type" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="36" name="manage_custom_expense_type_end" nullable="true" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="false" digits="0" id="37" name="manage_custom_revenue_type" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="38" name="manage_custom_revenue_type_end" nullable="true" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="false" digits="0" id="39" name="animals_beta" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="40" name="animals_beta_end" nullable="true" remarks="" size="35" type="timestamptz" typeCode="93"/>
          <primaryKey column="user_id" sequenceNumberInPK="1"/>
          <index name="showedSpotlight_pkey" unique="true">
             <column ascending="true" name="user_id"/>
@@ -2357,7 +2313,7 @@
             <column ascending="true" name="id"/>
          </index>
       </table>
-      <table catalog="pg-litefarm" name="soil_amendment_product" numRows="679" remarks="" schema="public" type="TABLE">
+      <table catalog="pg-litefarm" name="soil_amendment_product" numRows="793" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="product_id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
             <parent catalog="pg-litefarm" column="product_id" foreignKey="soil_amendment_product_product_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="product"/>
          </column>
@@ -2393,7 +2349,7 @@
             <column ascending="true" name="id"/>
          </index>
       </table>
-      <table catalog="pg-litefarm" name="soil_amendment_task" numRows="1727" remarks="" schema="public" type="TABLE">
+      <table catalog="pg-litefarm" name="soil_amendment_task" numRows="1945" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="task_id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
             <parent catalog="pg-litefarm" column="task_id" foreignKey="fertilizerlog_activity_id_foreign" implied="false" onDeleteCascade="true" schema="public" table="task"/>
          </column>
@@ -2408,7 +2364,7 @@
             <column ascending="true" name="task_id"/>
          </index>
       </table>
-      <table catalog="pg-litefarm" name="soil_amendment_task_products" numRows="1742" remarks="" schema="public" type="TABLE">
+      <table catalog="pg-litefarm" name="soil_amendment_task_products" numRows="1912" remarks="" schema="public" type="TABLE">
          <column autoUpdated="true" defaultValue="nextval('soil_amendment_task_products_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial" typeCode="4">
             <child catalog="pg-litefarm" column="task_products_id" foreignKey="soil_amendment_task_products_purpose_relationship_task_products" implied="false" onDeleteCascade="false" schema="public" table="soil_amendment_task_products_purpose_relationship"/>
          </column>
@@ -2444,7 +2400,7 @@
             <column ascending="true" name="product_id"/>
          </index>
       </table>
-      <table catalog="pg-litefarm" name="soil_amendment_task_products_purpose_relationship" numRows="1485" remarks="" schema="public" type="TABLE">
+      <table catalog="pg-litefarm" name="soil_amendment_task_products_purpose_relationship" numRows="1668" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="task_products_id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
             <parent catalog="pg-litefarm" column="id" foreignKey="soil_amendment_task_products_purpose_relationship_task_products" implied="false" onDeleteCascade="false" schema="public" table="soil_amendment_task_products"/>
          </column>
@@ -2457,6 +2413,28 @@
          <index name="soil_amendment_task_products_purpose_relationship_pkey" unique="true">
             <column ascending="true" name="task_products_id"/>
             <column ascending="true" name="purpose_id"/>
+         </index>
+      </table>
+      <table catalog="pg-litefarm" name="soil_sample_location" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="location_id" nullable="false" remarks="" size="2147483647" type="uuid" typeCode="1111">
+            <parent catalog="pg-litefarm" column="location_id" foreignKey="soil_sample_location_location_id_foreign" implied="false" onDeleteCascade="true" schema="public" table="location"/>
+         </column>
+         <primaryKey column="location_id" sequenceNumberInPK="1"/>
+         <index name="soil_sample_location_pkey" unique="true">
+            <column ascending="true" name="location_id"/>
+         </index>
+      </table>
+      <table catalog="pg-litefarm" name="soil_sample_task" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="task_id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <parent catalog="pg-litefarm" column="task_id" foreignKey="soil_sample_task_task_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="task"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="samples_per_location" nullable="false" remarks="" size="10" type="int4" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="sample_depths" nullable="false" remarks="" size="2147483647" type="jsonb" typeCode="1111"/>
+         <column autoUpdated="false" defaultValue="'cm'::text" digits="0" id="3" name="sample_depths_unit" nullable="false" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="'SOIL_PROBE'::text" digits="0" id="4" name="sampling_tool" nullable="false" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <primaryKey column="task_id" sequenceNumberInPK="1"/>
+         <index name="soil_sample_task_pkey" unique="true">
+            <column ascending="true" name="task_id"/>
          </index>
       </table>
       <table catalog="pg-litefarm" name="soil_task" numRows="38" remarks="" schema="public" type="TABLE">
@@ -2490,7 +2468,7 @@
             <column ascending="true" name="task_id"/>
          </index>
       </table>
-      <table catalog="pg-litefarm" name="supportTicket" numRows="336" remarks="" schema="public" type="TABLE">
+      <table catalog="pg-litefarm" name="supportTicket" numRows="378" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" defaultValue="uuid_generate_v4()" digits="0" id="0" name="support_ticket_id" nullable="false" remarks="" size="2147483647" type="uuid" typeCode="1111"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="support_type" nullable="false" remarks="" size="2147483647" type="text" typeCode="12"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="message" nullable="false" remarks="" size="2147483647" type="text" typeCode="12"/>
@@ -2516,7 +2494,7 @@
             <column ascending="true" name="support_ticket_id"/>
          </index>
       </table>
-      <table catalog="pg-litefarm" name="surface_water" numRows="890" remarks="" schema="public" type="TABLE">
+      <table catalog="pg-litefarm" name="surface_water" numRows="1027" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="location_id" nullable="false" remarks="" size="2147483647" type="uuid" typeCode="1111">
             <parent catalog="pg-litefarm" column="location_id" foreignKey="ground_water_location_id_foreign" implied="false" onDeleteCascade="true" schema="public" table="location"/>
          </column>
@@ -2526,7 +2504,7 @@
             <column ascending="true" name="location_id"/>
          </index>
       </table>
-      <table catalog="pg-litefarm" name="task" numRows="44793" remarks="" schema="public" type="TABLE">
+      <table catalog="pg-litefarm" name="task" numRows="49179" remarks="" schema="public" type="TABLE">
          <column autoUpdated="true" defaultValue="nextval('&quot;activityLog_activity_id_seq&quot;'::regclass)" digits="0" id="0" name="task_id" nullable="false" remarks="" size="10" type="serial" typeCode="4">
             <child catalog="pg-litefarm" column="task_id" foreignKey="animal_movement_task_task_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="animal_movement_task"/>
             <child catalog="pg-litefarm" column="task_id" foreignKey="animal_movement_task_purpose_relationship_task_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="animal_movement_task_purpose_relationship"/>
@@ -2544,9 +2522,11 @@
             <child catalog="pg-litefarm" column="task_id" foreignKey="social_task_task_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="social_task"/>
             <child catalog="pg-litefarm" column="task_id" foreignKey="fertilizerlog_activity_id_foreign" implied="false" onDeleteCascade="true" schema="public" table="soil_amendment_task"/>
             <child catalog="pg-litefarm" column="task_id" foreignKey="soil_amendment_task_products_task_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="soil_amendment_task_products"/>
+            <child catalog="pg-litefarm" column="task_id" foreignKey="soil_sample_task_task_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="soil_sample_task"/>
             <child catalog="pg-litefarm" column="task_id" foreignKey="soildatalog_activity_id_foreign" implied="false" onDeleteCascade="true" schema="public" table="soil_task"/>
             <child catalog="pg-litefarm" column="task_id" foreignKey="task_animal_batch_relationship_task_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="task_animal_batch_relationship"/>
             <child catalog="pg-litefarm" column="task_id" foreignKey="task_animal_relationship_task_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="task_animal_relationship"/>
+            <child catalog="pg-litefarm" column="task_id" foreignKey="task_document_task_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="task_document"/>
             <child catalog="pg-litefarm" column="task_id" foreignKey="transplant_task_task_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="transplant_task"/>
             <child catalog="pg-litefarm" column="task_id" foreignKey="transport_task_task_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="transport_task"/>
             <child catalog="pg-litefarm" column="task_id" foreignKey="wash_and_pack_task_task_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="wash_and_pack_task"/>
@@ -2599,7 +2579,7 @@
             <parent catalog="pg-litefarm" column="id" foreignKey="task_animal_batch_relationship_animal_batch_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="animal_batch"/>
          </column>
       </table>
-      <table catalog="pg-litefarm" name="task_animal_relationship" numRows="255" remarks="" schema="public" type="TABLE">
+      <table catalog="pg-litefarm" name="task_animal_relationship" numRows="436" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="task_id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
             <parent catalog="pg-litefarm" column="task_id" foreignKey="task_animal_relationship_task_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="task"/>
          </column>
@@ -2607,7 +2587,19 @@
             <parent catalog="pg-litefarm" column="id" foreignKey="task_animal_relationship_animal_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="animal"/>
          </column>
       </table>
-      <table catalog="pg-litefarm" name="task_type" numRows="1273" remarks="" schema="public" type="TABLE">
+      <table catalog="pg-litefarm" name="task_document" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="task_id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <parent catalog="pg-litefarm" column="task_id" foreignKey="task_document_task_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="task"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="document_id" nullable="false" remarks="" size="2147483647" type="uuid" typeCode="1111">
+            <parent catalog="pg-litefarm" column="document_id" foreignKey="task_document_document_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="document"/>
+         </column>
+         <index name="task_document_task_id_document_id_unique" unique="true">
+            <column ascending="true" name="task_id"/>
+            <column ascending="true" name="document_id"/>
+         </index>
+      </table>
+      <table catalog="pg-litefarm" name="task_type" numRows="1437" remarks="" schema="public" type="TABLE">
          <column autoUpdated="true" defaultValue="nextval('&quot;taskType_task_id_seq&quot;'::regclass)" digits="0" id="0" name="task_type_id" nullable="false" remarks="" size="10" type="serial" typeCode="4">
             <child catalog="pg-litefarm" column="task_id" foreignKey="shifttask_task_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="shiftTask"/>
             <child catalog="pg-litefarm" column="task_type_id" foreignKey="task_type_foreign" implied="false" onDeleteCascade="false" schema="public" table="task"/>
@@ -2634,7 +2626,7 @@
       <table catalog="pg-litefarm" name="test" numRows="0" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="message" nullable="true" remarks="" size="255" type="varchar" typeCode="12"/>
       </table>
-      <table catalog="pg-litefarm" name="transplant_task" numRows="2758" remarks="" schema="public" type="TABLE">
+      <table catalog="pg-litefarm" name="transplant_task" numRows="3001" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="task_id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
             <parent catalog="pg-litefarm" column="task_id" foreignKey="transplant_task_task_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="task"/>
          </column>
@@ -2675,7 +2667,7 @@
             <column ascending="true" name="status_id"/>
          </index>
       </table>
-      <table catalog="pg-litefarm" name="userFarm" numRows="10934" remarks="" schema="public" type="TABLE">
+      <table catalog="pg-litefarm" name="userFarm" numRows="12084" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="user_id" nullable="false" remarks="" size="255" type="varchar" typeCode="12">
             <child catalog="pg-litefarm" column="created_by_user_id" foreignKey="organiccertifiersurvey_farm_id_created_by_user_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="organicCertifierSurvey"/>
             <child catalog="pg-litefarm" column="updated_by_user_id" foreignKey="organiccertifiersurvey_farm_id_updated_by_user_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="organicCertifierSurvey"/>
@@ -2713,7 +2705,7 @@
             <column ascending="true" name="farm_id"/>
          </index>
       </table>
-      <table catalog="pg-litefarm" name="userLog" numRows="139265" remarks="" schema="public" type="TABLE">
+      <table catalog="pg-litefarm" name="userLog" numRows="160368" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" defaultValue="uuid_generate_v4()" digits="0" id="0" name="user_log_id" nullable="false" remarks="" size="2147483647" type="uuid" typeCode="1111"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="user_id" nullable="true" remarks="" size="255" type="varchar" typeCode="12">
             <parent catalog="pg-litefarm" column="user_id" foreignKey="userlog_user_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="users"/>
@@ -2739,7 +2731,7 @@
             <column ascending="true" name="user_log_id"/>
          </index>
       </table>
-      <table catalog="pg-litefarm" name="users" numRows="8378" remarks="" schema="public" type="TABLE">
+      <table catalog="pg-litefarm" name="users" numRows="9755" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" defaultValue="uuid_generate_v1()" digits="0" id="0" name="user_id" nullable="false" remarks="" size="255" type="varchar" typeCode="12">
             <child catalog="pg-litefarm" column="created_by_user_id" foreignKey="animal_created_by_user_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="animal"/>
             <child catalog="pg-litefarm" column="updated_by_user_id" foreignKey="animal_updated_by_user_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="animal"/>
@@ -2764,6 +2756,8 @@
             <child catalog="pg-litefarm" column="user_id" foreignKey="emailtoken_user_id_foreign" implied="false" onDeleteCascade="true" schema="public" table="emailToken"/>
             <child catalog="pg-litefarm" column="created_by_user_id" foreignKey="farm_created_by_user_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="farm"/>
             <child catalog="pg-litefarm" column="updated_by_user_id" foreignKey="farm_updated_by_user_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="farm"/>
+            <child catalog="pg-litefarm" column="created_by_user_id" foreignKey="farm_addon_created_by_user_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="farm_addon"/>
+            <child catalog="pg-litefarm" column="updated_by_user_id" foreignKey="farm_addon_updated_by_user_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="farm_addon"/>
             <child catalog="pg-litefarm" column="user_id" foreignKey="user_id" implied="false" onDeleteCascade="false" schema="public" table="farmDataSchedule"/>
             <child catalog="pg-litefarm" column="created_by_user_id" foreignKey="farmexpense_created_by_user_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="farmExpense"/>
             <child catalog="pg-litefarm" column="updated_by_user_id" foreignKey="farmexpense_updated_by_user_id_foreign" implied="false" onDeleteCascade="false" schema="public" table="farmExpense"/>

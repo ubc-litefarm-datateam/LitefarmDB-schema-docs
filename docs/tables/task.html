@@ -73,7 +73,7 @@
             <div class="content-wrapper">
                 <!-- Content Header (Page header) -->
                 <section class="content-header">
-                    <h1>task</h1><p><span id="recordNumber">44793</span> rows</p><br />
+                    <h1>task</h1><p><span id="recordNumber">49179</span> rows</p><br />
                 </section>
                 <!-- Main content -->
                 <section class="content">
@@ -198,6 +198,11 @@
                                                 <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
                                             </tr>
                                             <tr>
+                                                <td title="soil_sample_task.task_id references task.task_id via soil_sample_task_task_id_foreign"><a href='soil_sample_task.html'>soil_sample_task</a><span class='relatedKey'>.task_id</span></td>
+                                                <td class="constraint detail">soil_sample_task_task_id_foreign</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
                                                 <td title="soil_task.task_id references task.task_id via soildatalog_activity_id_foreign"><a href='soil_task.html'>soil_task</a><span class='relatedKey'>.task_id</span></td>
                                                 <td class="constraint detail">soildatalog_activity_id_foreign</td>
                                                 <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
@@ -210,6 +215,11 @@
                                             <tr>
                                                 <td title="task_animal_relationship.task_id references task.task_id via task_animal_relationship_task_id_foreign"><a href='task_animal_relationship.html'>task_animal_relationship</a><span class='relatedKey'>.task_id</span></td>
                                                 <td class="constraint detail">task_animal_relationship_task_id_foreign</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="task_document.task_id references task.task_id via task_document_task_id_foreign"><a href='task_document.html'>task_document</a><span class='relatedKey'>.task_id</span></td>
+                                                <td class="constraint detail">task_document_task_id_foreign</td>
                                                 <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
                                             </tr>
                                             <tr>
@@ -744,110 +754,115 @@
                                 <div class="tab-content no-padding">
                                     <div class="chart tab-pane active" id="oneDegreeImg-chart" style="position: relative; overflow-x:auto;">
                                         <map id="oneDegreeRelationshipsDiagram" name="oneDegreeRelationshipsDiagram">
-<area shape="rect" id="node1" href="animal_movement_task.html" target="_top" title="animal_movement_task" alt="" coords="1039,1033,1292,1127">
-<area shape="rect" id="node2" href="task.html" target="_top" title="task" alt="" coords="509,1537,909,2369">
-<area shape="rect" id="node6" href="users.html" target="_top" title="users" alt="" coords="5,1843,215,2019">
-<area shape="rect" id="node20" href="task_type.html" target="_top" title="task_type" alt="" coords="259,1851,465,2056">
-<area shape="rect" id="node3" href="animal_movement_task_purpose_re_17e6e3c6.html" target="_top" title="animal_movement_task_purpose_relationship" alt="" coords="953,1144,1378,1291">
-<area shape="rect" id="node4" href="cleaning_task.html" target="_top" title="cleaning_task" alt="" coords="1074,1308,1258,1455">
+<area shape="rect" id="node1" href="animal_movement_task.html" target="_top" title="animal_movement_task" alt="" coords="1039,1039,1292,1132">
+<area shape="rect" id="node2" href="task.html" target="_top" title="task" alt="" coords="509,1707,909,2539">
+<area shape="rect" id="node6" href="users.html" target="_top" title="users" alt="" coords="5,2012,215,2188">
+<area shape="rect" id="node21" href="task_type.html" target="_top" title="task_type" alt="" coords="259,2020,465,2225">
+<area shape="rect" id="node3" href="animal_movement_task_purpose_re_17e6e3c6.html" target="_top" title="animal_movement_task_purpose_relationship" alt="" coords="953,1149,1378,1296">
+<area shape="rect" id="node4" href="cleaning_task.html" target="_top" title="cleaning_task" alt="" coords="1074,1313,1258,1460">
 <area shape="rect" id="node5" href="field_work_task.html" target="_top" title="field_work_task" alt="" coords="1064,5,1268,211">
-<area shape="rect" id="node7" href="harvest_task.html" target="_top" title="harvest_task" alt="" coords="1050,1472,1281,1589">
-<area shape="rect" id="node8" href="irrigation_task.html" target="_top" title="irrigation_task" alt="" coords="978,1607,1353,1783">
-<area shape="rect" id="node9" href="location_tasks.html" target="_top" title="location_tasks" alt="" coords="1073,1800,1258,1923">
-<area shape="rect" id="node10" href="maintenance_task.html" target="_top" title="maintenance_task" alt="" coords="1059,1940,1272,2057">
-<area shape="rect" id="node11" href="management_tasks.html" target="_top" title="management_tasks" alt="" coords="1024,2075,1308,2197">
-<area shape="rect" id="node12" href="pest_control_task.html" target="_top" title="pest_control_task" alt="" coords="1061,2215,1270,2361">
-<area shape="rect" id="node13" href="plant_task.html" target="_top" title="plant_task" alt="" coords="1024,2379,1308,2501">
-<area shape="rect" id="node14" href="sale_task.html" target="_top" title="sale_task" alt="" coords="1093,2519,1238,2612">
-<area shape="rect" id="node15" href="scouting_task.html" target="_top" title="scouting_task" alt="" coords="1075,2629,1256,2747">
-<area shape="rect" id="node16" href="social_task.html" target="_top" title="social_task" alt="" coords="1086,2764,1245,2881">
-<area shape="rect" id="node17" href="soil_amendment_task.html" target="_top" title="soil_amendment_task" alt="" coords="1041,2899,1290,3045">
-<area shape="rect" id="node18" href="soil_amendment_task_products.html" target="_top" title="soil_amendment_task_products" alt="" coords="1007,3063,1324,3297">
-<area shape="rect" id="node19" href="soil_task.html" target="_top" title="soil_task" alt="" coords="1065,228,1266,345">
-<area shape="rect" id="node21" href="task_animal_batch_relationship.html" target="_top" title="task_animal_batch_relationship" alt="" coords="1007,363,1324,485">
-<area shape="rect" id="node22" href="task_animal_relationship.html" target="_top" title="task_animal_relationship" alt="" coords="1033,503,1298,625">
-<area shape="rect" id="node23" href="transplant_task.html" target="_top" title="transplant_task" alt="" coords="1002,643,1329,795">
-<area shape="rect" id="node24" href="transport_task.html" target="_top" title="transport_task" alt="" coords="1073,812,1258,905">
-<area shape="rect" id="node25" href="wash_and_pack_task.html" target="_top" title="wash_and_pack_task" alt="" coords="1047,923,1284,1016">
+<area shape="rect" id="node7" href="harvest_task.html" target="_top" title="harvest_task" alt="" coords="1050,1477,1281,1595">
+<area shape="rect" id="node8" href="irrigation_task.html" target="_top" title="irrigation_task" alt="" coords="978,1612,1353,1788">
+<area shape="rect" id="node9" href="location_tasks.html" target="_top" title="location_tasks" alt="" coords="1073,1805,1258,1928">
+<area shape="rect" id="node10" href="maintenance_task.html" target="_top" title="maintenance_task" alt="" coords="1059,1945,1272,2063">
+<area shape="rect" id="node11" href="management_tasks.html" target="_top" title="management_tasks" alt="" coords="1024,2080,1308,2203">
+<area shape="rect" id="node12" href="pest_control_task.html" target="_top" title="pest_control_task" alt="" coords="1061,2220,1270,2367">
+<area shape="rect" id="node13" href="plant_task.html" target="_top" title="plant_task" alt="" coords="1024,2384,1308,2507">
+<area shape="rect" id="node14" href="sale_task.html" target="_top" title="sale_task" alt="" coords="1093,2524,1238,2617">
+<area shape="rect" id="node15" href="scouting_task.html" target="_top" title="scouting_task" alt="" coords="1075,2635,1256,2752">
+<area shape="rect" id="node16" href="social_task.html" target="_top" title="social_task" alt="" coords="1086,2769,1245,2887">
+<area shape="rect" id="node17" href="soil_amendment_task.html" target="_top" title="soil_amendment_task" alt="" coords="1041,2904,1290,3051">
+<area shape="rect" id="node18" href="soil_amendment_task_products.html" target="_top" title="soil_amendment_task_products" alt="" coords="1007,3337,1324,3572">
+<area shape="rect" id="node19" href="soil_sample_task.html" target="_top" title="soil_sample_task" alt="" coords="1057,3068,1274,3185">
+<area shape="rect" id="node20" href="soil_task.html" target="_top" title="soil_task" alt="" coords="1065,3203,1266,3320">
+<area shape="rect" id="node22" href="task_animal_batch_relationship.html" target="_top" title="task_animal_batch_relationship" alt="" coords="1007,228,1324,351">
+<area shape="rect" id="node23" href="task_animal_relationship.html" target="_top" title="task_animal_relationship" alt="" coords="1033,368,1298,491">
+<area shape="rect" id="node24" href="task_document.html" target="_top" title="task_document" alt="" coords="1070,508,1261,631">
+<area shape="rect" id="node25" href="transplant_task.html" target="_top" title="transplant_task" alt="" coords="1002,648,1329,800">
+<area shape="rect" id="node26" href="transport_task.html" target="_top" title="transport_task" alt="" coords="1073,817,1258,911">
+<area shape="rect" id="node27" href="wash_and_pack_task.html" target="_top" title="wash_and_pack_task" alt="" coords="1047,928,1284,1021">
 </map>
                                         <a name='diagram'><img id="oneDegreeImg" src="../diagrams/tables/task.1degree.png" usemap="#oneDegreeRelationshipsDiagram" class="diagram" border="0" align="left"></a>
                                     </div>
                                     <div class="chart tab-pane " id="twodegreesDegreeImg-chart" style="position: relative; overflow-x:auto;">
                                         <map id="twoDegreesRelationshipsDiagram" name="twoDegreesRelationshipsDiagram">
-<area shape="rect" id="node1" href="animal.html" target="_top" title="animal" alt="" coords="1871,2884,2025,2972">
-<area shape="rect" id="node2" href="users.html" target="_top" title="users" alt="" coords="212,3009,379,3097">
-<area shape="rect" id="node3" href="custom_animal_breed.html" target="_top" title="custom_animal_breed" alt="" coords="1370,2408,1612,2496">
-<area shape="rect" id="node4" href="custom_animal_type.html" target="_top" title="custom_animal_type" alt="" coords="1017,2521,1248,2609">
-<area shape="rect" id="node5" href="farm.html" target="_top" title="farm" alt="" coords="771,2799,937,2887">
-<area shape="rect" id="node6" href="location.html" target="_top" title="location" alt="" coords="470,2692,644,2780">
-<area shape="rect" id="node73" href="user_status.html" target="_top" title="user_status" alt="" coords="5,3007,168,3095">
-<area shape="rect" id="node7" href="animal_batch.html" target="_top" title="animal_batch" alt="" coords="1860,2549,2035,2637">
+<area shape="rect" id="node1" href="animal.html" target="_top" title="animal" alt="" coords="1865,3159,2031,3247">
+<area shape="rect" id="node2" href="users.html" target="_top" title="users" alt="" coords="212,2809,379,2897">
+<area shape="rect" id="node3" href="custom_animal_breed.html" target="_top" title="custom_animal_breed" alt="" coords="1370,2029,1612,2117">
+<area shape="rect" id="node4" href="custom_animal_type.html" target="_top" title="custom_animal_type" alt="" coords="1017,1875,1248,1963">
+<area shape="rect" id="node5" href="farm.html" target="_top" title="farm" alt="" coords="771,2625,937,2713">
+<area shape="rect" id="node6" href="location.html" target="_top" title="location" alt="" coords="470,2519,644,2607">
+<area shape="rect" id="node76" href="user_status.html" target="_top" title="user_status" alt="" coords="5,2807,168,2895">
+<area shape="rect" id="node7" href="animal_batch.html" target="_top" title="animal_batch" alt="" coords="1860,1852,2035,1940">
 <area shape="rect" id="node8" href="animal_batch_sex_detail.html" target="_top" title="animal_batch_sex_detail" alt="" coords="2319,5,2580,93">
-<area shape="rect" id="node9" href="animal_group.html" target="_top" title="animal_group" alt="" coords="468,4684,646,4772">
-<area shape="rect" id="node10" href="animal_movement_task.html" target="_top" title="animal_movement_task" alt="" coords="1821,636,2075,729">
-<area shape="rect" id="node11" href="task.html" target="_top" title="task" alt="" coords="1292,853,1691,1685">
-<area shape="rect" id="node59" href="task_type.html" target="_top" title="task_type" alt="" coords="1053,1939,1211,2027">
-<area shape="rect" id="node12" href="animal_movement_task_purpose_re_17e6e3c6.html" target="_top" title="animal_movement_task_purpose_relationship" alt="" coords="1735,1681,2161,1828">
-<area shape="rect" id="node13" href="animal_movement_purpose.html" target="_top" title="animal_movement_purpose" alt="" coords="1349,2053,1634,2141">
-<area shape="rect" id="node14" href="cleaning_task.html" target="_top" title="cleaning_task" alt="" coords="1856,2185,2040,2332">
-<area shape="rect" id="node15" href="product.html" target="_top" title="product" alt="" coords="1412,2513,1570,2601">
-<area shape="rect" id="node16" href="crop.html" target="_top" title="crop" alt="" coords="1053,1833,1211,1921">
-<area shape="rect" id="node17" href="crop_variety.html" target="_top" title="crop_variety" alt="" coords="1407,1860,1576,1948">
-<area shape="rect" id="node18" href="disease.html" target="_top" title="disease" alt="" coords="1059,3108,1205,3196">
-<area shape="rect" id="node19" href="document.html" target="_top" title="document" alt="" coords="1057,3213,1207,3301">
-<area shape="rect" id="node20" href="emailToken.html" target="_top" title="emailToken" alt="" coords="1051,3319,1213,3407">
-<area shape="rect" id="node21" href="farmDataSchedule.html" target="_top" title="farmDataSchedule" alt="" coords="1025,3424,1239,3512">
-<area shape="rect" id="node22" href="farmExpense.html" target="_top" title="farmExpense" alt="" coords="1404,2989,1578,3077">
-<area shape="rect" id="node23" href="farmExpenseType.html" target="_top" title="farmExpenseType" alt="" coords="1027,2951,1238,3039">
-<area shape="rect" id="node24" href="fertilizer.html" target="_top" title="fertilizer" alt="" coords="1065,3581,1200,3669">
-<area shape="rect" id="node25" href="field_work_task.html" target="_top" title="field_work_task" alt="" coords="1851,1576,2045,1664">
-<area shape="rect" id="node26" href="field_work_type.html" target="_top" title="field_work_type" alt="" coords="1035,2148,1229,2236">
-<area shape="rect" id="node27" href="finance_report.html" target="_top" title="finance_report" alt="" coords="1040,3687,1224,3775">
-<area shape="rect" id="node28" href="harvest_task.html" target="_top" title="harvest_task" alt="" coords="1832,280,2063,397">
-<area shape="rect" id="node29" href="harvest_use.html" target="_top" title="harvest_use" alt="" coords="2366,283,2533,371">
-<area shape="rect" id="node30" href="irrigation_task.html" target="_top" title="irrigation_task" alt="" coords="1760,2691,2135,2867">
-<area shape="rect" id="node31" href="irrigation_type.html" target="_top" title="irrigation_type" alt="" coords="465,2852,649,2940">
-<area shape="rect" id="node32" href="location_defaults.html" target="_top" title="location_defaults" alt="" coords="752,2904,956,2992">
-<area shape="rect" id="node33" href="location_tasks.html" target="_top" title="location_tasks" alt="" coords="1856,2009,2040,2132">
-<area shape="rect" id="node34" href="maintenance_task.html" target="_top" title="maintenance_task" alt="" coords="1842,747,2054,864">
-<area shape="rect" id="node35" href="management_plan.html" target="_top" title="management_plan" alt="" coords="1841,139,2055,227">
-<area shape="rect" id="node36" href="management_plan_group.html" target="_top" title="management_plan_group" alt="" coords="423,591,691,679">
-<area shape="rect" id="node37" href="management_tasks.html" target="_top" title="management_tasks" alt="" coords="2760,1267,3044,1389">
-<area shape="rect" id="node38" href="planting_management_plan.html" target="_top" title="planting_management_plan" alt="" coords="2307,1468,2592,1556">
-<area shape="rect" id="node39" href="nomination.html" target="_top" title="nomination" alt="" coords="1053,4317,1212,4405">
-<area shape="rect" id="node40" href="nomination_type.html" target="_top" title="nomination_type" alt="" coords="456,4321,658,4409">
-<area shape="rect" id="node41" href="nomination_status.html" target="_top" title="nomination_status" alt="" coords="1384,4437,1599,4525">
-<area shape="rect" id="node42" href="nomination_workflow.html" target="_top" title="nomination_workflow" alt="" coords="735,4384,973,4472">
-<area shape="rect" id="node43" href="notification.html" target="_top" title="notification" alt="" coords="1049,4459,1215,4547">
-<area shape="rect" id="node44" href="notification_user.html" target="_top" title="notification_user" alt="" coords="1390,4595,1592,4683">
-<area shape="rect" id="node45" href="organic_history.html" target="_top" title="organic_history" alt="" coords="757,3113,951,3201">
-<area shape="rect" id="node46" href="organicCertifierSurvey.html" target="_top" title="organicCertifierSurvey" alt="" coords="1368,1755,1614,1843">
-<area shape="rect" id="node47" href="userFarm.html" target="_top" title="userFarm" alt="" coords="1049,1624,1215,1712">
-<area shape="rect" id="node48" href="password.html" target="_top" title="password" alt="" coords="483,4789,631,4877">
-<area shape="rect" id="node49" href="pest_control_task.html" target="_top" title="pest_control_task" alt="" coords="1843,2385,2053,2532">
-<area shape="rect" id="node50" href="pesticide.html" target="_top" title="pesticide" alt="" coords="1061,3792,1204,3880">
-<area shape="rect" id="node51" href="plant_task.html" target="_top" title="plant_task" alt="" coords="2760,1576,3044,1699">
-<area shape="rect" id="node52" href="release_badge.html" target="_top" title="release_badge" alt="" coords="465,4895,649,4983">
-<area shape="rect" id="node53" href="revenue_type.html" target="_top" title="revenue_type" alt="" coords="1044,3897,1220,3985">
-<area shape="rect" id="node54" href="sale.html" target="_top" title="sale" alt="" coords="1412,4029,1570,4117">
-<area shape="rect" id="node55" href="sale_task.html" target="_top" title="sale_task" alt="" coords="1875,881,2021,975">
-<area shape="rect" id="node56" href="scouting_task.html" target="_top" title="scouting_task" alt="" coords="1858,992,2038,1109">
-<area shape="rect" id="node57" href="shift.html" target="_top" title="shift" alt="" coords="1418,748,1564,836">
-<area shape="rect" id="node58" href="shiftTask.html" target="_top" title="shiftTask" alt="" coords="2377,157,2522,245">
-<area shape="rect" id="node60" href="showedSpotlight.html" target="_top" title="showedSpotlight" alt="" coords="456,5000,658,5088">
-<area shape="rect" id="node61" href="social_task.html" target="_top" title="social_task" alt="" coords="1868,1127,2027,1244">
-<area shape="rect" id="node62" href="soil_amendment_task.html" target="_top" title="soil_amendment_task" alt="" coords="1823,1845,2072,1992">
-<area shape="rect" id="node63" href="soil_amendment_method.html" target="_top" title="soil_amendment_method" alt="" coords="1358,2159,1624,2247">
-<area shape="rect" id="node64" href="soil_amendment_task_products.html" target="_top" title="soil_amendment_task_products" alt="" coords="1789,3613,2107,3701">
-<area shape="rect" id="node65" href="soil_amendment_task_products_pu_b07be0ac.html" target="_top" title="soil_amendment_task_products_purpose_relationship" alt="" coords="2205,3611,2694,3699">
-<area shape="rect" id="node66" href="soil_task.html" target="_top" title="soil_task" alt="" coords="1847,1261,2048,1379">
-<area shape="rect" id="node67" href="supportTicket.html" target="_top" title="supportTicket" alt="" coords="1043,4003,1222,4091">
-<area shape="rect" id="node68" href="task_animal_batch_relationship.html" target="_top" title="task_animal_batch_relationship" alt="" coords="2291,1885,2608,2008">
-<area shape="rect" id="node69" href="task_animal_relationship.html" target="_top" title="task_animal_relationship" alt="" coords="2317,2576,2582,2699">
-<area shape="rect" id="node70" href="transplant_task.html" target="_top" title="transplant_task" alt="" coords="2738,1407,3065,1559">
-<area shape="rect" id="node71" href="transport_task.html" target="_top" title="transport_task" alt="" coords="1856,415,2040,508">
-<area shape="rect" id="node72" href="userLog.html" target="_top" title="userLog" alt="" coords="1052,4108,1213,4196">
-<area shape="rect" id="node74" href="wash_and_pack_task.html" target="_top" title="wash_and_pack_task" alt="" coords="1830,525,2066,619">
+<area shape="rect" id="node9" href="animal_group.html" target="_top" title="animal_group" alt="" coords="468,4516,646,4604">
+<area shape="rect" id="node10" href="animal_movement_task.html" target="_top" title="animal_movement_task" alt="" coords="1821,708,2075,801">
+<area shape="rect" id="node11" href="task.html" target="_top" title="task" alt="" coords="1292,1092,1691,1924">
+<area shape="rect" id="node60" href="task_type.html" target="_top" title="task_type" alt="" coords="1053,1488,1211,1576">
+<area shape="rect" id="node12" href="animal_movement_task_purpose_re_17e6e3c6.html" target="_top" title="animal_movement_task_purpose_relationship" alt="" coords="1735,2237,2161,2384">
+<area shape="rect" id="node13" href="animal_movement_purpose.html" target="_top" title="animal_movement_purpose" alt="" coords="1349,2315,1634,2403">
+<area shape="rect" id="node14" href="cleaning_task.html" target="_top" title="cleaning_task" alt="" coords="1856,2565,2040,2712">
+<area shape="rect" id="node15" href="product.html" target="_top" title="product" alt="" coords="1412,2597,1570,2685">
+<area shape="rect" id="node16" href="crop.html" target="_top" title="crop" alt="" coords="1053,1681,1211,1769">
+<area shape="rect" id="node17" href="crop_variety.html" target="_top" title="crop_variety" alt="" coords="1407,951,1576,1039">
+<area shape="rect" id="node18" href="disease.html" target="_top" title="disease" alt="" coords="1059,2940,1205,3028">
+<area shape="rect" id="node19" href="document.html" target="_top" title="document" alt="" coords="1057,2137,1207,2225">
+<area shape="rect" id="node20" href="emailToken.html" target="_top" title="emailToken" alt="" coords="1051,3045,1213,3133">
+<area shape="rect" id="node21" href="farm_addon.html" target="_top" title="farm_addon" alt="" coords="1050,3151,1214,3239">
+<area shape="rect" id="node22" href="farmDataSchedule.html" target="_top" title="farmDataSchedule" alt="" coords="1025,3256,1239,3344">
+<area shape="rect" id="node23" href="farmExpense.html" target="_top" title="farmExpense" alt="" coords="1404,2883,1578,2971">
+<area shape="rect" id="node24" href="farmExpenseType.html" target="_top" title="farmExpenseType" alt="" coords="1027,2783,1238,2871">
+<area shape="rect" id="node25" href="fertilizer.html" target="_top" title="fertilizer" alt="" coords="1065,3361,1200,3449">
+<area shape="rect" id="node26" href="field_work_task.html" target="_top" title="field_work_task" alt="" coords="1851,1747,2045,1835">
+<area shape="rect" id="node27" href="field_work_type.html" target="_top" title="field_work_type" alt="" coords="1035,1980,1229,2068">
+<area shape="rect" id="node28" href="finance_report.html" target="_top" title="finance_report" alt="" coords="1040,3519,1224,3607">
+<area shape="rect" id="node29" href="harvest_task.html" target="_top" title="harvest_task" alt="" coords="1832,316,2063,433">
+<area shape="rect" id="node30" href="harvest_use.html" target="_top" title="harvest_use" alt="" coords="2366,319,2533,407">
+<area shape="rect" id="node31" href="irrigation_task.html" target="_top" title="irrigation_task" alt="" coords="1760,2965,2135,3141">
+<area shape="rect" id="node32" href="irrigation_type.html" target="_top" title="irrigation_type" alt="" coords="465,2679,649,2767">
+<area shape="rect" id="node33" href="location_defaults.html" target="_top" title="location_defaults" alt="" coords="752,2731,956,2819">
+<area shape="rect" id="node34" href="location_tasks.html" target="_top" title="location_tasks" alt="" coords="1856,2097,2040,2220">
+<area shape="rect" id="node35" href="maintenance_task.html" target="_top" title="maintenance_task" alt="" coords="1842,819,2054,936">
+<area shape="rect" id="node36" href="management_plan.html" target="_top" title="management_plan" alt="" coords="1841,139,2055,227">
+<area shape="rect" id="node37" href="management_plan_group.html" target="_top" title="management_plan_group" alt="" coords="423,531,691,619">
+<area shape="rect" id="node38" href="management_tasks.html" target="_top" title="management_tasks" alt="" coords="2760,975,3044,1097">
+<area shape="rect" id="node39" href="planting_management_plan.html" target="_top" title="planting_management_plan" alt="" coords="2307,1533,2592,1621">
+<area shape="rect" id="node40" href="nomination.html" target="_top" title="nomination" alt="" coords="1053,4291,1212,4379">
+<area shape="rect" id="node41" href="nomination_type.html" target="_top" title="nomination_type" alt="" coords="456,4224,658,4312">
+<area shape="rect" id="node42" href="nomination_status.html" target="_top" title="nomination_status" alt="" coords="1384,4307,1599,4395">
+<area shape="rect" id="node43" href="nomination_workflow.html" target="_top" title="nomination_workflow" alt="" coords="735,4176,973,4264">
+<area shape="rect" id="node44" href="notification.html" target="_top" title="notification" alt="" coords="1049,4149,1215,4237">
+<area shape="rect" id="node45" href="notification_user.html" target="_top" title="notification_user" alt="" coords="1390,4427,1592,4515">
+<area shape="rect" id="node46" href="organic_history.html" target="_top" title="organic_history" alt="" coords="757,2940,951,3028">
+<area shape="rect" id="node47" href="organicCertifierSurvey.html" target="_top" title="organicCertifierSurvey" alt="" coords="1368,845,1614,933">
+<area shape="rect" id="node48" href="userFarm.html" target="_top" title="userFarm" alt="" coords="1049,845,1215,933">
+<area shape="rect" id="node49" href="password.html" target="_top" title="password" alt="" coords="483,4621,631,4709">
+<area shape="rect" id="node50" href="pest_control_task.html" target="_top" title="pest_control_task" alt="" coords="1843,2765,2053,2912">
+<area shape="rect" id="node51" href="pesticide.html" target="_top" title="pesticide" alt="" coords="1061,3624,1204,3712">
+<area shape="rect" id="node52" href="plant_task.html" target="_top" title="plant_task" alt="" coords="2760,1627,3044,1749">
+<area shape="rect" id="node53" href="release_badge.html" target="_top" title="release_badge" alt="" coords="465,4727,649,4815">
+<area shape="rect" id="node54" href="revenue_type.html" target="_top" title="revenue_type" alt="" coords="1044,3940,1220,4028">
+<area shape="rect" id="node55" href="sale.html" target="_top" title="sale" alt="" coords="1412,3965,1570,4053">
+<area shape="rect" id="node56" href="sale_task.html" target="_top" title="sale_task" alt="" coords="1875,953,2021,1047">
+<area shape="rect" id="node57" href="scouting_task.html" target="_top" title="scouting_task" alt="" coords="1858,1064,2038,1181">
+<area shape="rect" id="node58" href="shift.html" target="_top" title="shift" alt="" coords="1418,688,1564,776">
+<area shape="rect" id="node59" href="shiftTask.html" target="_top" title="shiftTask" alt="" coords="2377,172,2522,260">
+<area shape="rect" id="node61" href="showedSpotlight.html" target="_top" title="showedSpotlight" alt="" coords="456,4832,658,4920">
+<area shape="rect" id="node62" href="social_task.html" target="_top" title="social_task" alt="" coords="1868,1199,2027,1316">
+<area shape="rect" id="node63" href="soil_amendment_task.html" target="_top" title="soil_amendment_task" alt="" coords="1823,2401,2072,2548">
+<area shape="rect" id="node64" href="soil_amendment_method.html" target="_top" title="soil_amendment_method" alt="" coords="1358,2420,1624,2508">
+<area shape="rect" id="node65" href="soil_amendment_task_products.html" target="_top" title="soil_amendment_task_products" alt="" coords="1789,3667,2107,3755">
+<area shape="rect" id="node66" href="soil_amendment_task_products_pu_b07be0ac.html" target="_top" title="soil_amendment_task_products_purpose_relationship" alt="" coords="2205,3664,2694,3752">
+<area shape="rect" id="node67" href="soil_sample_task.html" target="_top" title="soil_sample_task" alt="" coords="1839,1333,2056,1451">
+<area shape="rect" id="node68" href="soil_task.html" target="_top" title="soil_task" alt="" coords="1847,1468,2048,1585">
+<area shape="rect" id="node69" href="supportTicket.html" target="_top" title="supportTicket" alt="" coords="1043,3729,1222,3817">
+<area shape="rect" id="node70" href="task_animal_batch_relationship.html" target="_top" title="task_animal_batch_relationship" alt="" coords="2291,1747,2608,1869">
+<area shape="rect" id="node71" href="task_animal_relationship.html" target="_top" title="task_animal_relationship" alt="" coords="2317,2543,2582,2665">
+<area shape="rect" id="node72" href="task_document.html" target="_top" title="task_document" alt="" coords="1852,1957,2043,2080">
+<area shape="rect" id="node73" href="transplant_task.html" target="_top" title="transplant_task" alt="" coords="2738,1457,3065,1609">
+<area shape="rect" id="node74" href="transport_task.html" target="_top" title="transport_task" alt="" coords="1856,451,2040,544">
+<area shape="rect" id="node75" href="userLog.html" target="_top" title="userLog" alt="" coords="1052,3835,1213,3923">
+<area shape="rect" id="node77" href="wash_and_pack_task.html" target="_top" title="wash_and_pack_task" alt="" coords="1830,561,2066,655">
 </map>
                                         <a name='diagram'><img id="twodegreesDegreeImg" src="../diagrams/tables/task.2degrees.png" usemap="#twoDegreesRelationshipsDiagram" class="diagram" border="0" align="left"></a>
                                     </div>

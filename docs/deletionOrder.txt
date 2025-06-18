@@ -1,5 +1,6 @@
 untitled_table
 test
+migration_deletion_logs
 knex_migrations_lock
 knex_migrations
 organicCertifierSurvey
@@ -9,6 +10,7 @@ nomination_status
 location_defaults
 field_work_task
 farmExpense
+farm_addon
 animal_batch_sex_detail
 transplant_task
 supportTicket
@@ -20,12 +22,12 @@ fertilizer
 yield
 waterBalance
 userLog
+task_document
 task_animal_relationship
 task_animal_batch_relationship
 soil_amendment_task_products_purpose_relationship
 soil_amendment_task
 soil_amendment_product
-sensor_reading_type
 rolePermissions
 price
 plant_task
@@ -36,7 +38,6 @@ location_tasks
 harvest_use
 garden
 farmDataSchedule
-farm_external_integration
 emailToken
 cropDisease
 crop_variety_sale
@@ -57,9 +58,10 @@ wash_and_pack_task
 transport_task
 surface_water
 soil_task
+soil_sample_task
+soil_sample_location
 social_task
 showedSpotlight
-sensor_reading
 scouting_task
 sale_task
 row_method
@@ -95,14 +97,12 @@ notification
 nomination_workflow
 field_work_type
 farmExpenseType
-document
 disease
-partner_reading_type
 harvest_use_type
 harvest_task
 nomination
 irrigation_type
-sensor
+document
 field
 animal_group
 certifiers
@@ -134,6 +134,7 @@ permissions
 animal_movement_purpose
 animal_identifier_type
 animal_identifier_color
+addon_partner
 role
 hs_code
 countries
@@ -141,7 +142,6 @@ certifications
 animal_sex
 animal_removal_reason
 animal_origin
-integrating_partner
 animal_use
 weather_station
 default_animal_type
